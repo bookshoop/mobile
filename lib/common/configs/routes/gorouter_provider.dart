@@ -9,6 +9,7 @@ import 'package:bookforest/features/book/presentation/views/book_search_screen.d
 import 'package:bookforest/features/book_forest/data/dtos/enum/book_forest_options.dart';
 import 'package:bookforest/features/book_forest/presentation/views/book_forest_search_screen.dart';
 import 'package:bookforest/features/book_forest/presentation/views/home_screen.dart';
+import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
 import 'package:bookforest/features/push/presentation/views/push_screen.dart';
 import 'package:bookforest/features/search/presentation/views/search_screen.dart';
 import 'package:bookforest/features/user/presentation/views/user_search_screen.dart';
@@ -112,69 +113,9 @@ final goRouter = Provider<GoRouter>(
           builder: (context, state) => const JoinScreen(),
         ),
         GoRoute(
-          path: '/',
-          name: HomeScreen.routeName,
-          builder: (context, state) => HomeScreen(
-            initialIndex:
-                int.tryParse(state.uri.queryParameters['initialIndex'] ?? ''),
-            searchValue: state.uri.queryParameters['searchValue'],
-          ),
-          routes: [
-            GoRoute(
-              path: 'push',
-              name: PushScreen.routeName,
-              builder: (context, state) => const PushScreen(),
-            ),
-            GoRoute(
-              path: 'search',
-              name: SearchScreen.routeName,
-              builder: (context, state) => SearchScreen(
-                value: state.extra as String,
-              ),
-              routes: [
-                GoRoute(
-                  path: 'book',
-                  name: BookSearchScreen.routeName,
-                  builder: (context, state) => BookSearchScreen(
-                    value: state.extra as String,
-                  ),
-                ),
-                GoRoute(
-                  path: 'user',
-                  name: UserSearchScreen.routeName,
-                  builder: (context, state) => UserSearchScreen(
-                    value: state.extra as String,
-                  ),
-                ),
-              ],
-            ),
-            GoRoute(
-              path: 'bookforest',
-              name: BookForestListScreen.routeName,
-              builder: (context, state) => BookForestListScreen(
-                value: state.uri.queryParameters['value'],
-                option: BookForestOptions.name(
-                    state.uri.queryParameters['option']!),
-              ),
-            ),
-            GoRoute(
-              path: 'best-seller',
-              name: BestSellerScreen.routeName,
-              builder: (context, state) => const BestSellerScreen(),
-            ),
-            GoRoute(
-              path: 'book-recommend',
-              name: BookRecommedScreen.routeName,
-              builder: (context, state) => const BookRecommedScreen(),
-            ),
-            GoRoute(
-              path: 'book/:id',
-              name: BookDetailScreen.routeName,
-              builder: (context, state) => BookDetailScreen(
-                id: state.pathParameters['id']!,
-              ),
-            ),
-          ],
+          path: '/book-shelf',
+          name: BookShelfScreen.routeName,
+          builder: (context, state) => const BookShelfScreen(),
         ),
       ],
       navigatorKey: navigatorKey,

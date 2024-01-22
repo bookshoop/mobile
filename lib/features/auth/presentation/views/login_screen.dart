@@ -3,6 +3,7 @@ import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.da
 import 'package:bookforest/common/configs/theme/theme.dart';
 import 'package:bookforest/common/utils/size_util.dart';
 import 'package:bookforest/features/auth/presentation/widgets/login_button.dart';
+import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
@@ -105,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          context.goNamed('/');
+                          context.goNamed(BookShelfScreen.routeName);
                         },
                         child: Text(
                           '비회원으로 시작하기',

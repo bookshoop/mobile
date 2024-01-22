@@ -100,7 +100,7 @@ class BookForest extends ConsumerWidget {
 
         return MediaQuery(
           data: MediaQuery.of(context).copyWith(
-            textScaler: const TextScaler.linear(1),
+            textScaler: TextScaler.noScaling,
           ),
           child: AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle.light,
