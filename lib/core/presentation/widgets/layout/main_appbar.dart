@@ -1,6 +1,7 @@
 import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:bookforest/features/push/presentation/views/push_screen.dart';
+import 'package:bookforest/features/user/presentation/views/my_page_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -58,7 +59,9 @@ class MainAppbar extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: onProfileTap,
+                    onTap: () {
+                      context.pushNamed(MyPageScreen.routeName);
+                    },
                     child: Padding(
                       padding: EdgeInsets.only(left: 5.size),
                       child: SvgPicture.asset(

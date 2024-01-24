@@ -4,6 +4,7 @@ import 'package:bookforest/features/auth/presentation/views/login_screen.dart';
 import 'package:bookforest/features/auth/presentation/views/splash_screen.dart';
 import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
 import 'package:bookforest/features/user/domain/entities/user.dart';
+import 'package:bookforest/features/user/presentation/views/my_page_screen.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -56,15 +57,26 @@ final goRouter = Provider<GoRouter>(
           name: BookShelfScreen.routeName,
           builder: (context, state) => const BookShelfScreen(),
         ),
+        GoRoute(
+          path: '/mypage',
+          name: MyPageScreen.routeName,
+          builder: (context, state) => const MyPageScreen(),
+        ),
       ],
       navigatorKey: navigatorKey,
       refreshListenable: refreshListenable,
       redirect: (_, state) async {
         final user = ref.read(authControllerProvider);
-        if (user is Login) {
+
+        final logingIn = state.matchedLocation == SplashScreen.routeName ||
+            state.matchedLocation == LoginScreen.routeName;
+
+        if (logingIn && user is Login) {
           return '/book-shelf';
-        } else if (user is Logout) {
-          return '/login';
+        }
+
+        if (user is Logout) {
+          return LoginScreen.routeName;
         }
         return null;
       },
