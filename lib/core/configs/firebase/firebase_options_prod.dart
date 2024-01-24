@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -49,17 +50,17 @@ class FirebaseOptionsProd {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBVk31Zrsk_z_pmzJIy4OkYjhR5U45ZZGc',
-    appId: '1:628911207901:android:cffe249ee249433dbbf234',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.get('firebase_andriod_apikey'),
+    appId: dotenv.get('firebase_andriod_appId'),
     messagingSenderId: '628911207901',
     projectId: 'bookforest-2441d',
     storageBucket: 'bookforest-2441d.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDbOx0au6O_759OxC84mN9g2ICUOsKvz60',
-    appId: '1:628911207901:ios:a458ab7017a59f3fbbf234',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.get('firebase_ios_apikey'),
+    appId: dotenv.get('firebase_ios_appId'),
     messagingSenderId: '628911207901',
     projectId: 'bookforest-2441d',
     storageBucket: 'bookforest-2441d.appspot.com',
