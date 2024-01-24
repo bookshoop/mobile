@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 
 class RecommendBookForestListCard extends StatelessWidget {
@@ -11,14 +11,14 @@ class RecommendBookForestListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: expectSize(110),
+      height: 110.size,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.network(
             'https://post-phinf.pstatic.net/MjAyMTA5MTVfMjQ5/MDAxNjMxNjk1MzU1MjI3.q2V4EmXYKCnhinl94MYdsx5Z98m_gQDo-_IvFgxkpa0g.fJxJrrwvEtBlBq5tMc1fF8y7R5E9m2edEP35B2vWJxYg.JPEG/6.jpg?type=w800_q75',
-            width: expectSize(100),
-            height: expectSize(100),
+            width: 100.size,
+            height: 100.size,
           ),
           const EmptySpace(width: 12),
           Flexible(

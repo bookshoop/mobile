@@ -1,5 +1,5 @@
-import 'package:bookforest/common/domain/entities/enums/book_forest_options.dart';
-import 'package:bookforest/common/domain/entities/enums/division.dart';
+import 'package:bookforest/core/domain/entities/enums/book_forest_options.dart';
+import 'package:bookforest/core/domain/entities/enums/division.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'book_forest_parameters.g.dart';

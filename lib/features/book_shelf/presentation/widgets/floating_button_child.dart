@@ -1,7 +1,7 @@
 // ignore_for_file: overridden_fields
 
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
@@ -22,16 +22,16 @@ class FloatinButtonChild extends SpeedDialChild {
     super.foregroundColor = Colors.white,
   })  : child = Icon(
           iconData,
-          size: expectSize(20),
+          size: 20.size,
         ),
         labelWidget = Container(
           padding: EdgeInsets.symmetric(
-            horizontal: expectSize(6),
-            vertical: expectSize(5),
+            horizontal: 6.size,
+            vertical: 5.size,
           ),
           decoration: BoxDecoration(
             color: AppThemeData.mainColor,
-            borderRadius: BorderRadius.circular(expectSize(8)),
+            borderRadius: BorderRadius.circular(8.size),
           ),
           child: Text(
             label!,

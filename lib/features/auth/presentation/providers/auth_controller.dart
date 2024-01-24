@@ -1,30 +1,28 @@
 // ignore_for_file: avoid_print
 
+import 'package:bookforest/features/auth/domain/usecases/social_login.dart';
 import 'package:bookforest/features/user/domain/entities/user.dart';
-import 'package:bookforest/features/auth/domain/usecases/apple_login.dart';
-import 'package:bookforest/features/auth/domain/usecases/kakao_login.dart';
-import 'package:bookforest/features/auth/domain/usecases/naver_login.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:bookforest/features/auth/domain/entities/enums/login_type.dart';
 
 part 'auth_controller.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class AuthController extends _$AuthController {
   @override
-  Future<User> build() async {
+  User build() {
     return const User.logout();
   }
 
 // 일반 로그인
-  Future<void> login({
-    required String phoneNumber,
-    required String password,
-  }) async {
-    print(phoneNumber);
-    print(password);
-  }
+  // Future<void> login({
+  //   required String phoneNumber,
+  //   required String password,
+  // }) async {
+  //   print(phoneNumber);
+  //   print(password);
+  // }
 
 // 소셜 로그인
   Future<void> socialLogin({
@@ -47,9 +45,10 @@ class AuthController extends _$AuthController {
   }
 
   Future<void> _kakaoLogin() async {
-    final kakaoLogin = ref.watch(kakaoLoginProvider);
+    final socialLogin = ref.watch(socialLoginProvider);
     try {
-      final kakaoUser = await kakaoLogin.kakaoLogin();
+      final kakaoUser = await socialLogin.kakaoLogin();
+      state = kakaoUser;
       print(kakaoUser);
     } on Exception catch (e) {
       print(e);
@@ -57,9 +56,10 @@ class AuthController extends _$AuthController {
   }
 
   Future<void> _naverLogin() async {
-    final naverLogin = ref.watch(naverLoginProvider);
+    final socialLogin = ref.watch(socialLoginProvider);
     try {
-      final naverUser = await naverLogin.naverLogin();
+      final naverUser = await socialLogin.naverLogin();
+      state = naverUser;
       print(naverUser);
     } on Exception catch (e) {
       print(e);
@@ -67,9 +67,10 @@ class AuthController extends _$AuthController {
   }
 
   Future<void> _appleLogin() async {
-    final appleLogin = ref.watch(appleLoginProvider);
+    final socialLogin = ref.watch(socialLoginProvider);
     try {
-      final appleUser = await appleLogin.appleLogin();
+      final appleUser = await socialLogin.appleLogin();
+      state = appleUser;
       print(appleUser);
     } on Exception catch (e) {
       print(e);

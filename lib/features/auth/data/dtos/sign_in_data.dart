@@ -7,18 +7,15 @@ part 'sign_in_data.g.dart';
 @freezed
 class SignInData with _$SignInData {
   const factory SignInData({
-    String? profile,
-    required String nickname,
-    String? phoneNumber,
-    required String pushToken,
+    required String socialId,
+    required String socialProvider,
     DateTime? birthday,
-    List<int>? likeGenre,
-    int? accessRouteId,
-    int? accessRoute,
+    String? mobile,
+    String? pushToken,
   }) = _SignInData;
 
-  factory SignInData.test() =>
-      const SignInData(nickname: 'nickname', pushToken: 'pushToken');
+  // factory SignInData.test() =>
+  //     const SignInData(nickname: 'nickname', pushToken: 'pushToken');
 
   factory SignInData.fromJson(Map<String, dynamic> json) =>
       _$SignInDataFromJson(json);

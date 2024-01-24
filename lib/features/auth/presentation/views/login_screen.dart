@@ -1,12 +1,10 @@
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/auth/presentation/widgets/login_button.dart';
-import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
   static String get routeName => '/login';
@@ -36,7 +34,7 @@ class LoginScreen extends StatelessWidget {
               flex: 40,
               child: Image.asset(
                 'assets/images/common/logo_horizontal.png',
-                height: expectSize(60),
+                height: 60.size,
               ),
             ).animate().fadeIn(),
             const EmptySpace(height: 20),
@@ -58,16 +56,15 @@ class LoginScreen extends StatelessWidget {
               flex: 100,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: expectSize(34),
+                  horizontal: 34.size,
                 ),
                 child: Container(
                   padding: EdgeInsets.symmetric(
-                    horizontal: expectSize(30),
-                    vertical: expectSize(20),
+                    horizontal: 30.size,
+                    vertical: 20.size,
                   ),
                   decoration: BoxDecoration(
-                    // color: AppThemeData.backGroundColor,
-                    borderRadius: BorderRadius.circular(expectSize(15)),
+                    borderRadius: BorderRadius.circular(15.size),
                   ),
                   child: Column(
                     children: [
@@ -76,9 +73,8 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Container(
-                              // color: AppThemeData.lightGrey,
                               color: Colors.white,
-                              height: expectSize(1),
+                              height: 1.size,
                             ),
                           ),
                           const EmptySpace(width: 5),
@@ -86,15 +82,13 @@ class LoginScreen extends StatelessWidget {
                             '다음 계정으로 계속하기',
                             style: AppThemeData.bold_14.copyWith(
                               color: Colors.white,
-                              // color: AppThemeData.darkGrey,
                             ),
                           ),
                           const EmptySpace(width: 5),
                           Expanded(
                             child: Container(
                               color: Colors.white,
-                              // color: AppThemeData.lightGrey,
-                              height: expectSize(1),
+                              height: 1.size,
                             ),
                           ),
                         ],
@@ -104,18 +98,18 @@ class LoginScreen extends StatelessWidget {
                       const Expanded(
                         child: SizedBox(),
                       ),
-                      InkWell(
-                        onTap: () {
-                          context.goNamed(BookShelfScreen.routeName);
-                        },
-                        child: Text(
-                          '비회원으로 시작하기',
-                          style: AppThemeData.regular_14.copyWith(
-                            color: AppThemeData.lightGrey,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                      // InkWell(
+                      //   onTap: () {
+                      //     context.goNamed(BookShelfScreen.routeName);
+                      //   },
+                      //   child: Text(
+                      //     '비회원으로 시작하기',
+                      //     style: AppThemeData.regular_14.copyWith(
+                      //       color: AppThemeData.lightGrey,
+                      //     ),
+                      //     textAlign: TextAlign.center,
+                      //   ),
+                      // ),
                       const EmptySpace(height: 10),
                     ],
                   ),

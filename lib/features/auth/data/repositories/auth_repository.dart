@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/flavor/config.dart';
-import 'package:bookforest/common/configs/network/dio_provider.dart';
-import 'package:bookforest/features/auth/data/dtos/jwt.dart';
+import 'package:bookforest/core/configs/flavor/config.dart';
+import 'package:bookforest/core/configs/network/dio_provider.dart';
+import 'package:bookforest/features/auth/data/dtos/login_response.dart';
 import 'package:bookforest/features/auth/data/dtos/sign_in_data.dart';
 import 'package:dio/dio.dart' hide Headers;
 import 'package:retrofit/retrofit.dart';
@@ -8,7 +8,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'auth_repository.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 AuthRepository authRepository(AuthRepositoryRef ref) {
   final dio = ref.watch(dioProvider);
   final baseUrl = Config.instance.baseUrl;
@@ -20,8 +20,7 @@ abstract class AuthRepository {
   factory AuthRepository(Dio dio, {String baseUrl}) = _AuthRepository;
 
   @POST('/social-login')
-  Future<Jwt> socialLogin({
-    @Query('snsName') required String snsName,
+  Future<LoginResponse> socialLogin({
     @Body() required SignInData signInData,
   });
 }

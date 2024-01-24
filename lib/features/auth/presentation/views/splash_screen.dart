@@ -1,5 +1,5 @@
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:bookforest/features/auth/presentation/views/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

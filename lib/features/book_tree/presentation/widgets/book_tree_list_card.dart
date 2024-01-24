@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_tree/domain/entities/book_tree.dart';
 import 'package:flutter/material.dart';
 
@@ -17,9 +17,9 @@ class BookTreeListCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(2),
       child: Container(
-        padding: EdgeInsets.all(expectSize(14)),
+        padding: EdgeInsets.all(14.size),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(expectSize(16)),
+          borderRadius: BorderRadius.circular(16.size),
           color: AppThemeData.backGroundColor,
           boxShadow: [
             BoxShadow(
@@ -37,8 +37,8 @@ class BookTreeListCard extends StatelessWidget {
                 children: [
                   Image.network(
                     'https://image.yes24.com/goods/106400867/XL',
-                    width: expectSize(70),
-                    height: expectSize(100),
+                    width: 70.size,
+                    height: 100.size,
                     fit: BoxFit.cover,
                   ),
                   const EmptySpace(height: 5),
@@ -76,7 +76,7 @@ class BookTreeListCard extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.favorite_sharp,
-                        size: expectSize(16),
+                        size: 16.size,
                         color: AppThemeData.mainColor,
                       ),
                       const EmptySpace(width: 2),
@@ -126,8 +126,8 @@ class BookTreeListCardShimmer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: expectSize(100),
-          height: expectSize(120),
+          width: 100.size,
+          height: 120.size,
           color: Colors.white,
         ),
         const EmptySpace(width: 20),
@@ -137,26 +137,26 @@ class BookTreeListCardShimmer extends StatelessWidget {
           children: [
             const EmptySpace(height: 10),
             Container(
-              width: expectSize(150),
-              height: expectSize(15),
+              width: 150.size,
+              height: 15.size,
               color: Colors.white,
             ),
             const EmptySpace(height: 10),
             Container(
-              width: expectSize(120),
-              height: expectSize(15),
+              width: 120.size,
+              height: 15.size,
               color: Colors.white,
             ),
             const EmptySpace(height: 10),
             Container(
-              width: expectSize(120),
-              height: expectSize(15),
+              width: 120.size,
+              height: 15.size,
               color: Colors.white,
             ),
             const EmptySpace(height: 10),
             Container(
-              width: expectSize(120),
-              height: expectSize(15),
+              width: 120.size,
+              height: 15.size,
               color: Colors.white,
             ),
           ],

@@ -1,11 +1,11 @@
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_appbar.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/presentation/widgets/sliver_header_delegate.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/presentation/widgets/sliver_header_delegate.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/search/presentation/widgets/user_list_card.dart';
 import 'package:flutter/material.dart';
-import 'package:bookforest/common/presentation/widgets/search_textfield.dart';
+import 'package:bookforest/core/presentation/widgets/search_textfield.dart';
 
 class UserSearchScreen extends StatelessWidget {
   static String get routeName => '/search/user';
@@ -24,18 +24,18 @@ class UserSearchScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(
-          left: expectSize(24),
-          right: expectSize(24),
+          left: 24.size,
+          right: 24.size,
         ),
         child: CustomScrollView(
           slivers: [
             SliverPersistentHeader(
               floating: true,
               delegate: SliverHeaderDelegate(
-                maxHeight: expectSize(74),
-                minHeight: expectSize(74),
+                maxHeight: 74.size,
+                minHeight: 74.size,
                 child: Container(
-                  height: expectSize(74),
+                  height: 74.size,
                   color: Colors.white,
                   child: Column(
                     children: [

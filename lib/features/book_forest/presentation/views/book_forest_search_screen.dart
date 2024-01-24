@@ -1,15 +1,15 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_appbar.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/presentation/widgets/sliver_header_delegate.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/presentation/widgets/sliver_header_delegate.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/data/dtos/enum/book_forest_options.dart';
 import 'package:bookforest/features/book_forest/domain/entities/book_forest.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/book_forest_list_card.dart';
 import 'package:bookforest/features/book_shelf/presentation/widgets/book_shelf_selector.dart';
 import 'package:flutter/material.dart';
-import 'package:bookforest/common/presentation/widgets/search_textfield.dart';
+import 'package:bookforest/core/presentation/widgets/search_textfield.dart';
 
 class BookForestListScreen extends StatelessWidget {
   static String get routeName => '/bookforest';
@@ -30,16 +30,16 @@ class BookForestListScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(
-          left: expectSize(24),
-          right: expectSize(24),
+          left: 24.size,
+          right: 24.size,
         ),
         child: CustomScrollView(
           slivers: [
             SliverPersistentHeader(
               floating: true,
               delegate: SliverHeaderDelegate(
-                maxHeight: expectSize(115),
-                minHeight: expectSize(115),
+                maxHeight: 115.size,
+                minHeight: 115.size,
                 child: Container(
                   color: Colors.white,
                   child: Column(
@@ -65,7 +65,7 @@ class BookForestListScreen extends StatelessWidget {
                             ),
                             Icon(
                               Icons.create_outlined,
-                              size: expectSize(24),
+                              size: 24.size,
                               color: AppThemeData.mainColor,
                             ),
                           ],
@@ -79,7 +79,7 @@ class BookForestListScreen extends StatelessWidget {
             ),
             SliverGrid.count(
               crossAxisCount: 2,
-              crossAxisSpacing: expectSize(15),
+              crossAxisSpacing: 15.size,
               childAspectRatio: 0.7,
               children: List.generate(
                 16,

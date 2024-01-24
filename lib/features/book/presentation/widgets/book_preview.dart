@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/domain/entities/pagination.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:bookforest/features/book/presentation/widgets/book_list_card.dart';
 import 'package:bookforest/features/book/presentation/widgets/book_preview_shimmer.dart';
@@ -27,14 +27,14 @@ class BookPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: expectSize(5),
-        bottom: expectSize(15),
+        top: 5.size,
+        bottom: 15.size,
       ),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(
-              bottom: expectSize(19),
+              bottom: 19.size,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -81,7 +81,7 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) {
     final itemCount = min((bookList.content.length / 3).ceil(), 3);
     return SizedBox(
-      height: expectSize(250),
+      height: 250.size,
       child: Swiper(
         itemCount: itemCount,
         loop: false,

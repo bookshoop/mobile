@@ -20,14 +20,11 @@ SignInData _$SignInDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$SignInData {
-  String? get profile => throw _privateConstructorUsedError;
-  String get nickname => throw _privateConstructorUsedError;
-  String? get phoneNumber => throw _privateConstructorUsedError;
-  String get pushToken => throw _privateConstructorUsedError;
+  String get socialId => throw _privateConstructorUsedError;
+  String get socialProvider => throw _privateConstructorUsedError;
   DateTime? get birthday => throw _privateConstructorUsedError;
-  List<int>? get likeGenre => throw _privateConstructorUsedError;
-  int? get accessRouteId => throw _privateConstructorUsedError;
-  int? get accessRoute => throw _privateConstructorUsedError;
+  String? get mobile => throw _privateConstructorUsedError;
+  String? get pushToken => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,14 +39,11 @@ abstract class $SignInDataCopyWith<$Res> {
       _$SignInDataCopyWithImpl<$Res, SignInData>;
   @useResult
   $Res call(
-      {String? profile,
-      String nickname,
-      String? phoneNumber,
-      String pushToken,
+      {String socialId,
+      String socialProvider,
       DateTime? birthday,
-      List<int>? likeGenre,
-      int? accessRouteId,
-      int? accessRoute});
+      String? mobile,
+      String? pushToken});
 }
 
 /// @nodoc
@@ -65,48 +59,33 @@ class _$SignInDataCopyWithImpl<$Res, $Val extends SignInData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profile = freezed,
-    Object? nickname = null,
-    Object? phoneNumber = freezed,
-    Object? pushToken = null,
+    Object? socialId = null,
+    Object? socialProvider = null,
     Object? birthday = freezed,
-    Object? likeGenre = freezed,
-    Object? accessRouteId = freezed,
-    Object? accessRoute = freezed,
+    Object? mobile = freezed,
+    Object? pushToken = freezed,
   }) {
     return _then(_value.copyWith(
-      profile: freezed == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nickname: null == nickname
-          ? _value.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
+      socialId: null == socialId
+          ? _value.socialId
+          : socialId // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushToken: null == pushToken
-          ? _value.pushToken
-          : pushToken // ignore: cast_nullable_to_non_nullable
+      socialProvider: null == socialProvider
+          ? _value.socialProvider
+          : socialProvider // ignore: cast_nullable_to_non_nullable
               as String,
       birthday: freezed == birthday
           ? _value.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      likeGenre: freezed == likeGenre
-          ? _value.likeGenre
-          : likeGenre // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      accessRouteId: freezed == accessRouteId
-          ? _value.accessRouteId
-          : accessRouteId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      accessRoute: freezed == accessRoute
-          ? _value.accessRoute
-          : accessRoute // ignore: cast_nullable_to_non_nullable
-              as int?,
+      mobile: freezed == mobile
+          ? _value.mobile
+          : mobile // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pushToken: freezed == pushToken
+          ? _value.pushToken
+          : pushToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -120,14 +99,11 @@ abstract class _$$SignInDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? profile,
-      String nickname,
-      String? phoneNumber,
-      String pushToken,
+      {String socialId,
+      String socialProvider,
       DateTime? birthday,
-      List<int>? likeGenre,
-      int? accessRouteId,
-      int? accessRoute});
+      String? mobile,
+      String? pushToken});
 }
 
 /// @nodoc
@@ -141,48 +117,33 @@ class __$$SignInDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profile = freezed,
-    Object? nickname = null,
-    Object? phoneNumber = freezed,
-    Object? pushToken = null,
+    Object? socialId = null,
+    Object? socialProvider = null,
     Object? birthday = freezed,
-    Object? likeGenre = freezed,
-    Object? accessRouteId = freezed,
-    Object? accessRoute = freezed,
+    Object? mobile = freezed,
+    Object? pushToken = freezed,
   }) {
     return _then(_$SignInDataImpl(
-      profile: freezed == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nickname: null == nickname
-          ? _value.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
+      socialId: null == socialId
+          ? _value.socialId
+          : socialId // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushToken: null == pushToken
-          ? _value.pushToken
-          : pushToken // ignore: cast_nullable_to_non_nullable
+      socialProvider: null == socialProvider
+          ? _value.socialProvider
+          : socialProvider // ignore: cast_nullable_to_non_nullable
               as String,
       birthday: freezed == birthday
           ? _value.birthday
           : birthday // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      likeGenre: freezed == likeGenre
-          ? _value._likeGenre
-          : likeGenre // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      accessRouteId: freezed == accessRouteId
-          ? _value.accessRouteId
-          : accessRouteId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      accessRoute: freezed == accessRoute
-          ? _value.accessRoute
-          : accessRoute // ignore: cast_nullable_to_non_nullable
-              as int?,
+      mobile: freezed == mobile
+          ? _value.mobile
+          : mobile // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pushToken: freezed == pushToken
+          ? _value.pushToken
+          : pushToken // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -191,83 +152,51 @@ class __$$SignInDataImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SignInDataImpl implements _SignInData {
   const _$SignInDataImpl(
-      {this.profile,
-      required this.nickname,
-      this.phoneNumber,
-      required this.pushToken,
+      {required this.socialId,
+      required this.socialProvider,
       this.birthday,
-      final List<int>? likeGenre,
-      this.accessRouteId,
-      this.accessRoute})
-      : _likeGenre = likeGenre;
+      this.mobile,
+      this.pushToken});
 
   factory _$SignInDataImpl.fromJson(Map<String, dynamic> json) =>
       _$$SignInDataImplFromJson(json);
 
   @override
-  final String? profile;
+  final String socialId;
   @override
-  final String nickname;
-  @override
-  final String? phoneNumber;
-  @override
-  final String pushToken;
+  final String socialProvider;
   @override
   final DateTime? birthday;
-  final List<int>? _likeGenre;
   @override
-  List<int>? get likeGenre {
-    final value = _likeGenre;
-    if (value == null) return null;
-    if (_likeGenre is EqualUnmodifiableListView) return _likeGenre;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
+  final String? mobile;
   @override
-  final int? accessRouteId;
-  @override
-  final int? accessRoute;
+  final String? pushToken;
 
   @override
   String toString() {
-    return 'SignInData(profile: $profile, nickname: $nickname, phoneNumber: $phoneNumber, pushToken: $pushToken, birthday: $birthday, likeGenre: $likeGenre, accessRouteId: $accessRouteId, accessRoute: $accessRoute)';
+    return 'SignInData(socialId: $socialId, socialProvider: $socialProvider, birthday: $birthday, mobile: $mobile, pushToken: $pushToken)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SignInDataImpl &&
-            (identical(other.profile, profile) || other.profile == profile) &&
-            (identical(other.nickname, nickname) ||
-                other.nickname == nickname) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
-            (identical(other.pushToken, pushToken) ||
-                other.pushToken == pushToken) &&
+            (identical(other.socialId, socialId) ||
+                other.socialId == socialId) &&
+            (identical(other.socialProvider, socialProvider) ||
+                other.socialProvider == socialProvider) &&
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday) &&
-            const DeepCollectionEquality()
-                .equals(other._likeGenre, _likeGenre) &&
-            (identical(other.accessRouteId, accessRouteId) ||
-                other.accessRouteId == accessRouteId) &&
-            (identical(other.accessRoute, accessRoute) ||
-                other.accessRoute == accessRoute));
+            (identical(other.mobile, mobile) || other.mobile == mobile) &&
+            (identical(other.pushToken, pushToken) ||
+                other.pushToken == pushToken));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      profile,
-      nickname,
-      phoneNumber,
-      pushToken,
-      birthday,
-      const DeepCollectionEquality().hash(_likeGenre),
-      accessRouteId,
-      accessRoute);
+      runtimeType, socialId, socialProvider, birthday, mobile, pushToken);
 
   @JsonKey(ignore: true)
   @override
@@ -285,34 +214,25 @@ class _$SignInDataImpl implements _SignInData {
 
 abstract class _SignInData implements SignInData {
   const factory _SignInData(
-      {final String? profile,
-      required final String nickname,
-      final String? phoneNumber,
-      required final String pushToken,
+      {required final String socialId,
+      required final String socialProvider,
       final DateTime? birthday,
-      final List<int>? likeGenre,
-      final int? accessRouteId,
-      final int? accessRoute}) = _$SignInDataImpl;
+      final String? mobile,
+      final String? pushToken}) = _$SignInDataImpl;
 
   factory _SignInData.fromJson(Map<String, dynamic> json) =
       _$SignInDataImpl.fromJson;
 
   @override
-  String? get profile;
+  String get socialId;
   @override
-  String get nickname;
-  @override
-  String? get phoneNumber;
-  @override
-  String get pushToken;
+  String get socialProvider;
   @override
   DateTime? get birthday;
   @override
-  List<int>? get likeGenre;
+  String? get mobile;
   @override
-  int? get accessRouteId;
-  @override
-  int? get accessRoute;
+  String? get pushToken;
   @override
   @JsonKey(ignore: true)
   _$$SignInDataImplCopyWith<_$SignInDataImpl> get copyWith =>

@@ -8,8 +8,8 @@ part of 'user.dart';
 
 _$LoginImpl _$$LoginImplFromJson(Map<String, dynamic> json) => _$LoginImpl(
       id: json['id'] as int,
-      username: json['username'] as String,
-      phoneNumber: json['phoneNumber'] as String?,
+      nickName: json['nickName'] as String,
+      mobile: json['mobile'] as String?,
       birthday: json['birthday'] == null
           ? null
           : DateTime.parse(json['birthday'] as String),
@@ -22,8 +22,8 @@ _$LoginImpl _$$LoginImplFromJson(Map<String, dynamic> json) => _$LoginImpl(
 Map<String, dynamic> _$$LoginImplToJson(_$LoginImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'username': instance.username,
-      'phoneNumber': instance.phoneNumber,
+      'nickName': instance.nickName,
+      'mobile': instance.mobile,
       'birthday': instance.birthday?.toIso8601String(),
       'profile': instance.profile,
       'runtimeType': instance.$type,

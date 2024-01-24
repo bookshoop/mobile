@@ -1,5 +1,5 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_shelf/presentation/widgets/floating_button_child.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -13,16 +13,16 @@ class BookShelfFloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SpeedDial(
       backgroundColor: AppThemeData.mainColor,
-      buttonSize: Size(expectSize(50), expectSize(50)),
+      buttonSize: Size(50.size, 50.size),
       elevation: 3,
       renderOverlay: false,
       icon: Icons.add,
       iconTheme: IconThemeData(
         color: Colors.white,
-        size: expectSize(24),
+        size: 24.size,
       ),
-      childrenButtonSize: Size(expectSize(45), expectSize(45)),
-      spaceBetweenChildren: expectSize(5),
+      childrenButtonSize: Size(45.size, 45.size),
+      spaceBetweenChildren: 5.size,
       children: [
         FloatinButtonChild(
           iconData: Icons.camera_alt_outlined,

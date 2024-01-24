@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/domain/entities/book_forest.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
@@ -19,8 +19,8 @@ class BookForestListCard extends StatelessWidget {
       children: [
         Image.network(
           bookForest.thumbnail,
-          width: expectSize(150),
-          height: expectSize(150),
+          width: 150.size,
+          height: 150.size,
           fit: BoxFit.cover,
         ),
         const EmptySpace(height: 9),
@@ -49,20 +49,20 @@ class BookForestListCardShimmer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: expectSize(150),
-            height: expectSize(150),
+            width: 150.size,
+            height: 150.size,
             color: Colors.white,
           ),
           const EmptySpace(height: 9),
           Container(
-            width: expectSize(120),
-            height: expectSize(12),
+            width: 120.size,
+            height: 12.size,
             color: Colors.white,
           ),
           const EmptySpace(height: 9),
           Container(
-            width: expectSize(100),
-            height: expectSize(12),
+            width: 100.size,
+            height: 12.size,
             color: Colors.white,
           ),
         ],

@@ -1,4 +1,4 @@
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/features/book_tree/presentation/widgets/book_tree_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';

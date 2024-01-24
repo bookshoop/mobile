@@ -1,9 +1,9 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/search_textfield.dart';
-import 'package:bookforest/common/presentation/widgets/sliver_header_delegate.dart';
-import 'package:bookforest/common/utils/no_implicit_scroll_physics.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/search_textfield.dart';
+import 'package:bookforest/core/presentation/widgets/sliver_header_delegate.dart';
+import 'package:bookforest/core/utils/no_implicit_scroll_physics.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/user/domain/entities/user.dart';
 import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:bookforest/features/book_tree/domain/entities/book_tree.dart';
@@ -22,8 +22,8 @@ class BookTreeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: expectSize(24),
-        right: expectSize(24),
+        left: 24.size,
+        right: 24.size,
       ),
       child: CustomScrollView(
         physics: const NoImplicitScrollPhysics(),
@@ -31,8 +31,8 @@ class BookTreeScreen extends StatelessWidget {
           SliverPersistentHeader(
             floating: true,
             delegate: SliverHeaderDelegate(
-              maxHeight: expectSize(115),
-              minHeight: expectSize(115),
+              maxHeight: 115.size,
+              minHeight: 115.size,
               child: Container(
                 color: Colors.white,
                 child: Column(
@@ -59,7 +59,7 @@ class BookTreeScreen extends StatelessWidget {
                           ),
                           Icon(
                             Icons.create_outlined,
-                            size: expectSize(24),
+                            size: 24.size,
                             color: AppThemeData.mainColor,
                           ),
                         ],

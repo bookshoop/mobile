@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 
 class UserListCard extends StatelessWidget {
@@ -13,7 +13,7 @@ class UserListCard extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(
-          radius: expectSize(32),
+          radius: 32.size,
           backgroundImage: const NetworkImage(
             'https://i.namu.wiki/i/sJP57jG46ZMxtguzyqmOl-xyOqW6yteOiTfiKzlLkJFrO0HmDQh_DVdnTJp_zo7MWkjVbpFHDwnJJIcWrq-ViQ.webp',
           ),
@@ -48,10 +48,10 @@ class UserListCard extends StatelessWidget {
         ),
         const EmptySpace(width: 5),
         Container(
-          width: expectSize(65),
-          height: expectSize(28),
+          width: 65.size,
+          height: 28.size,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(expectSize(5)),
+            borderRadius: BorderRadius.circular(5.size),
             color: AppThemeData.subGreen,
           ),
           alignment: Alignment.center,

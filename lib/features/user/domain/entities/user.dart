@@ -1,4 +1,4 @@
-import 'package:bookforest/common/domain/entities/book_forest_file.dart';
+import 'package:bookforest/core/domain/entities/book_forest_file.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.g.dart';
@@ -11,8 +11,8 @@ sealed class User with _$User {
   // User의 하위클래스이기 때문에 User타입이 여러 상태를 담을 수 있다.
   const factory User.login({
     required int id,
-    required String username,
-    String? phoneNumber,
+    required String nickName,
+    String? mobile,
     DateTime? birthday,
     BookForestFile? profile,
   }) = Login;

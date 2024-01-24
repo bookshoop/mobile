@@ -1,4 +1,4 @@
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 import 'package:kakao_map_plugin/kakao_map_plugin.dart';
 
@@ -19,9 +19,9 @@ class _BookForestMapState extends State<BookForestMap> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: expectSize(200),
+      height: 200.size,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(expectSize(15)),
+        borderRadius: BorderRadius.circular(15.size),
         child: const KakaoMap(),
       ),
     );

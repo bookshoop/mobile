@@ -1,8 +1,8 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_appbar.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -36,15 +36,15 @@ class BookDetailScreen extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                top: expectSize(30),
+                top: 30.size,
               ),
               child: Column(
                 children: [
                   CachedNetworkImage(
                     imageUrl:
                         'https://image.aladin.co.kr/product/32896/32/cover500/k402936527_1.jpg',
-                    width: expectSize(170),
-                    height: expectSize(255),
+                    width: 170.size,
+                    height: 255.size,
                   ),
                   const EmptySpace(height: 10),
                   Text(
@@ -64,7 +64,7 @@ class BookDetailScreen extends StatelessWidget {
                       Icons.star,
                       color: AppThemeData.mainColor,
                     ),
-                    itemSize: expectSize(24),
+                    itemSize: 24.size,
                     itemCount: 5,
                     rating: 3.5,
                     unratedColor: AppThemeData.lightGrey,
@@ -75,13 +75,13 @@ class BookDetailScreen extends StatelessWidget {
             const EmptySpace(height: 20),
             Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: expectSize(36),
+                horizontal: 36.size,
               ),
               child: Container(
-                height: expectSize(80),
+                height: 80.size,
                 decoration: BoxDecoration(
                   color: AppThemeData.backGroundColor,
-                  borderRadius: BorderRadius.circular(expectSize(16)),
+                  borderRadius: BorderRadius.circular(16.size),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -93,7 +93,7 @@ class BookDetailScreen extends StatelessWidget {
                         Icon(
                           Icons.check_box_outlined,
                           color: AppThemeData.mainColor,
-                          size: expectSize(24),
+                          size: 24.size,
                         ),
                         EmptySpace(height: 10),
                         Text(
@@ -108,7 +108,7 @@ class BookDetailScreen extends StatelessWidget {
                         Icon(
                           Icons.favorite_border,
                           color: AppThemeData.mainColor,
-                          size: expectSize(24),
+                          size: 24.size,
                         ),
                         Text(
                           '위시\n리스트',
@@ -123,7 +123,7 @@ class BookDetailScreen extends StatelessWidget {
                         Icon(
                           Icons.chrome_reader_mode_outlined,
                           color: AppThemeData.mainColor,
-                          size: expectSize(24),
+                          size: 24.size,
                         ),
                         Text(
                           '읽은 사람\n7283명',
@@ -150,7 +150,7 @@ class BookDetailScreen extends StatelessWidget {
             const EmptySpace(height: 30),
             Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: expectSize(24),
+                horizontal: 24.size,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -167,7 +167,7 @@ class BookDetailScreen extends StatelessWidget {
                           Icon(
                             Icons.add,
                             color: AppThemeData.mainColor,
-                            size: expectSize(20),
+                            size: 20.size,
                           ),
                         ],
                       ),
@@ -179,11 +179,11 @@ class BookDetailScreen extends StatelessWidget {
                             style: AppThemeData.regular_14,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(right: expectSize(3)),
+                            padding: EdgeInsets.only(right: 3.size),
                             child: Icon(
                               Icons.border_color_outlined,
                               color: AppThemeData.mainColor,
-                              size: expectSize(14),
+                              size: 14.size,
                             ),
                           ),
                         ],

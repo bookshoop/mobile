@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 
 class BookListCardInBookShelf extends StatelessWidget {
@@ -15,8 +15,8 @@ class BookListCardInBookShelf extends StatelessWidget {
       children: [
         Image.network(
           'https://image.yes24.com/goods/106400867/XL',
-          width: expectSize(95),
-          height: expectSize(150),
+          width: 95.size,
+          height: 150.size,
           fit: BoxFit.cover,
         ),
         const EmptySpace(height: 6),

@@ -1,4 +1,4 @@
-import 'package:bookforest/common/domain/entities/pagination.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:bookforest/features/book/domain/usecases/get_best_seller.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

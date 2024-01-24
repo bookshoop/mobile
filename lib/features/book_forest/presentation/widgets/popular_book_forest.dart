@@ -1,4 +1,4 @@
-import 'package:bookforest/common/domain/entities/pagination.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/book_forest/data/dtos/enum/book_forest_options.dart';
 import 'package:bookforest/features/book_forest/domain/entities/book_forest.dart';
 import 'package:bookforest/features/book_forest/presentation/providers/popular_book_forest_provider.dart';

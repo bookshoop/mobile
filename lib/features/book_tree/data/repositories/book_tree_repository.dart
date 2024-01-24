@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/flavor/config.dart';
-import 'package:bookforest/common/configs/network/dio_provider.dart';
-import 'package:bookforest/common/domain/entities/pagination.dart';
+import 'package:bookforest/core/configs/flavor/config.dart';
+import 'package:bookforest/core/configs/network/dio_provider.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/book_tree/data/dtos/book_tree_parameters.dart';
 import 'package:bookforest/features/book_tree/domain/entities/book_tree.dart';
 import 'package:dio/dio.dart' hide Headers;

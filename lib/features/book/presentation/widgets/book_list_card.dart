@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:bookforest/features/book/presentation/views/book_detail_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +30,8 @@ class BookListCard extends StatelessWidget {
         children: [
           Image.network(
             book.thumbnail ?? 'https://image.yes24.com/goods/106400867/XL',
-            width: expectSize(95),
-            height: expectSize(150),
+            width: 95.size,
+            height: 150.size,
             fit: BoxFit.cover,
           ),
           const EmptySpace(height: 6),
@@ -68,26 +68,26 @@ class BookListCardShimmer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          width: expectSize(95),
-          height: expectSize(150),
+          width: 95.size,
+          height: 150.size,
           color: Colors.white,
         ),
         const EmptySpace(height: 6),
         Container(
-          width: expectSize(70),
-          height: expectSize(12),
+          width: 70.size,
+          height: 12.size,
           color: Colors.white,
         ),
         const EmptySpace(height: 6),
         Container(
-          width: expectSize(60),
-          height: expectSize(10),
+          width: 60.size,
+          height: 10.size,
           color: Colors.white,
         ),
         const EmptySpace(height: 6),
         Container(
-          width: expectSize(60),
-          height: expectSize(10),
+          width: 60.size,
+          height: 10.size,
           color: Colors.white,
         ),
       ],

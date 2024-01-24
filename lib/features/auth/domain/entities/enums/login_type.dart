@@ -1,4 +1,4 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 enum LoginType {

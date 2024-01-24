@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/recommend_book_forest_list_card.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +15,8 @@ class RecommendBookforest extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            top: expectSize(18),
-            bottom: expectSize(19),
+            top: 18.size,
+            bottom: 19.size,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

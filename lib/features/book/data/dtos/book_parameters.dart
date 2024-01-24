@@ -1,4 +1,4 @@
-import 'package:bookforest/common/domain/entities/enums/division.dart';
+import 'package:bookforest/core/domain/entities/enums/division.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '../../../book_forest/data/dtos/book_parameters.g.dart';

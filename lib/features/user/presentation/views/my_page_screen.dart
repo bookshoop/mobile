@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/recommend_book_forest_list_card.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +17,8 @@ class MyPageScreen extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              left: expectSize(24),
-              right: expectSize(24),
+              left: 24.size,
+              right: 24.size,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -27,7 +27,7 @@ class MyPageScreen extends StatelessWidget {
                 Row(
                   children: [
                     CircleAvatar(
-                      radius: expectSize(40),
+                      radius: 40.size,
                       backgroundImage: const NetworkImage(
                         'https://i.namu.wiki/i/sJP57jG46ZMxtguzyqmOl-xyOqW6yteOiTfiKzlLkJFrO0HmDQh_DVdnTJp_zo7MWkjVbpFHDwnJJIcWrq-ViQ.webp',
                       ),
@@ -50,7 +50,7 @@ class MyPageScreen extends StatelessWidget {
                               ),
                               Icon(
                                 Icons.settings,
-                                size: expectSize(24),
+                                size: 24.size,
                               ),
                             ],
                           ),
@@ -69,9 +69,9 @@ class MyPageScreen extends StatelessWidget {
                 ),
                 const EmptySpace(height: 30),
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: expectSize(15)),
+                  padding: EdgeInsets.symmetric(vertical: 15.size),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(expectSize(16)),
+                    borderRadius: BorderRadius.circular(16.size),
                     color: AppThemeData.backGroundColor,
                   ),
                   child: Row(
@@ -81,7 +81,7 @@ class MyPageScreen extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.favorite,
-                            size: expectSize(24),
+                            size: 24.size,
                             color: AppThemeData.mainColor,
                           ),
                           Text(
@@ -95,7 +95,7 @@ class MyPageScreen extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.chrome_reader_mode_outlined,
-                            size: expectSize(24),
+                            size: 24.size,
                             color: AppThemeData.mainColor,
                           ),
                           Text(
@@ -109,8 +109,8 @@ class MyPageScreen extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'assets/images/icon/edit_square.svg',
-                            width: expectSize(24),
-                            height: expectSize(24),
+                            width: 24.size,
+                            height: 24.size,
                           ),
                           Text(
                             '책나무\n130그루',
@@ -145,7 +145,7 @@ class MyPageScreen extends StatelessWidget {
                 ),
                 const EmptySpace(height: 16),
                 SizedBox(
-                  height: expectSize(222),
+                  height: 222.size,
                   child: LineChart(
                     LineChartData(
                       backgroundColor: const Color.fromRGBO(244, 244, 244, 1),
@@ -258,8 +258,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -273,8 +273,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -288,8 +288,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -303,8 +303,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -318,8 +318,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -333,8 +333,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -359,8 +359,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(
@@ -374,8 +374,8 @@ class MyPageScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: expectSize(14),
-              horizontal: expectSize(24),
+              vertical: 14.size,
+              horizontal: 24.size,
             ),
             decoration: const BoxDecoration(
               border: Border(

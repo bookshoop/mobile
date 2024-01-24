@@ -1,5 +1,5 @@
-import 'package:bookforest/common/domain/entities/enums/division.dart';
-import 'package:bookforest/common/domain/entities/pagination.dart';
+import 'package:bookforest/core/domain/entities/enums/division.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/book_tree/data/dtos/book_tree_parameters.dart';
 import 'package:bookforest/features/book_tree/data/repositories/book_tree_repository.dart';
 import 'package:bookforest/features/book_tree/data/repositories/mock/mock_book_tree_repository.dart';

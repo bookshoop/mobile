@@ -1,10 +1,10 @@
 import 'dart:ui';
 
-import 'package:bookforest/common/utils/size_util.dart';
-import 'package:bookforest/common/configs/firebase/firebase_settings.dart';
-import 'package:bookforest/common/configs/flavor/config.dart';
-import 'package:bookforest/common/configs/routes/gorouter_provider.dart';
-import 'package:bookforest/common/configs/theme/theme.dart';
+import 'package:bookforest/core/utils/size_util.dart';
+import 'package:bookforest/core/configs/firebase/firebase_settings.dart';
+import 'package:bookforest/core/configs/flavor/config.dart';
+import 'package:bookforest/core/configs/routes/gorouter_provider.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +13,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: '.env');
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   await SystemChrome.setPreferredOrientations([
@@ -28,7 +31,7 @@ void main() async {
   debugPrint(flavor);
 
   KakaoSdk.init(
-    nativeAppKey: '57e552033b0e34630fa7aca9be6ad790',
+    nativeAppKey: dotenv.get('kakao_native_app_key'),
   );
   // TODO 안드로이드 디버그 Key Hash 확인용
   debugPrint(await KakaoSdk.origin);
@@ -51,6 +54,7 @@ void main() async {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
+  FcmSettings.initialize();
 
   runApp(
     const ProviderScope(
@@ -64,9 +68,6 @@ class BookForest extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    FirebaseSettings.registerNotification();
-    FirebaseSettings.configLocalNotification();
-    // debugPrint(FirebaseSettings.appToken);
     final router = ref.watch(goRouter);
     return MaterialApp.router(
       localizationsDelegates: const [
@@ -84,7 +85,7 @@ class BookForest extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       builder: (context, child) {
         initializeDateFormatting(Localizations.localeOf(context).languageCode);
-        getMediaHeight(context);
+        SizeUtil.getMediaSize(context);
         precacheImage(
           const AssetImage('assets/images/common/background.jpg'),
           context,

@@ -1,13 +1,13 @@
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/presentation/widgets/layout/main_appbar.dart';
-import 'package:bookforest/common/presentation/widgets/sliver_header_delegate.dart';
-import 'package:bookforest/common/utils/no_implicit_scroll_physics.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/presentation/widgets/layout/main_appbar.dart';
+import 'package:bookforest/core/presentation/widgets/sliver_header_delegate.dart';
+import 'package:bookforest/core/utils/no_implicit_scroll_physics.dart';
 import 'package:flutter/material.dart';
 
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/search_textfield.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/search_textfield.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_shelf/presentation/widgets/book_list_card_in_book_shelf.dart';
 import 'package:bookforest/features/book_shelf/presentation/widgets/book_shelf_floating_button.dart';
 import 'package:bookforest/features/book_shelf/presentation/widgets/book_shelf_selector.dart';
@@ -24,8 +24,8 @@ class BookShelfScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(
-          left: expectSize(24),
-          right: expectSize(24),
+          left: 24.size,
+          right: 24.size,
         ),
         child: Stack(
           children: [
@@ -35,8 +35,8 @@ class BookShelfScreen extends StatelessWidget {
                 SliverPersistentHeader(
                   floating: true,
                   delegate: SliverHeaderDelegate(
-                    maxHeight: expectSize(115),
-                    minHeight: expectSize(115),
+                    maxHeight: 115.size,
+                    minHeight: 115.size,
                     child: Container(
                       color: Colors.white,
                       child: Column(
@@ -64,7 +64,7 @@ class BookShelfScreen extends StatelessWidget {
                                 ),
                                 Icon(
                                   Icons.keyboard_arrow_right,
-                                  size: expectSize(24),
+                                  size: 24.size,
                                 ),
                               ],
                             ),
@@ -77,8 +77,8 @@ class BookShelfScreen extends StatelessWidget {
                 ),
                 SliverGrid.count(
                   crossAxisCount: 3,
-                  // mainAxisSpacing: expectSize(16),
-                  crossAxisSpacing: expectSize(15),
+                  // mainAxisSpacing: 16.size,
+                  crossAxisSpacing: 15.size,
                   childAspectRatio: 0.35,
                   children: const [
                     BookListCardInBookShelf(),
@@ -98,7 +98,7 @@ class BookShelfScreen extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: expectSize(25),
+              bottom: 25.size,
               right: 0,
               child: const BookShelfFloatingButton(),
             ),

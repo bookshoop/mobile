@@ -18,7 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.6
   cached_network_image: ^3.2.3
-  go_router: ^12.0.0
+  go_router: ^13.0.1
   permission_handler: ^11.0.0
   geolocator: ^10.1.0
   flutter_secure_storage: ^9.0.0
@@ -49,10 +49,11 @@ dependencies:
   dropdown_button2: ^3.0.0-beta.7
   flutter_speed_dial: ^7.0.0
   kakao_map_plugin: ^0.2.2
-  fl_chart: ^0.64.0
+  fl_chart: ^0.66.1
   shimmer: ^3.0.0
   flutter_animate: ^4.3.0
   flutter_rating_bar: ^4.0.1
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -77,6 +78,7 @@ flutter:
     - assets/images/icon/
     - assets/images/login/
     - assets/app_icon/
+    - .env
 
   fonts:
     - family: Inter

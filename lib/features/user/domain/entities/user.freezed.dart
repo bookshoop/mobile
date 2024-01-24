@@ -37,7 +37,7 @@ User _$UserFromJson(Map<String, dynamic> json) {
 mixin _$User {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -50,7 +50,7 @@ mixin _$User {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -63,7 +63,7 @@ mixin _$User {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,
@@ -131,8 +131,8 @@ abstract class _$$LoginImplCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String username,
-      String? phoneNumber,
+      String nickName,
+      String? mobile,
       DateTime? birthday,
       BookForestFile? profile});
 
@@ -151,8 +151,8 @@ class __$$LoginImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? username = null,
-    Object? phoneNumber = freezed,
+    Object? nickName = null,
+    Object? mobile = freezed,
     Object? birthday = freezed,
     Object? profile = freezed,
   }) {
@@ -161,13 +161,13 @@ class __$$LoginImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      nickName: null == nickName
+          ? _value.nickName
+          : nickName // ignore: cast_nullable_to_non_nullable
               as String,
-      phoneNumber: freezed == phoneNumber
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
+      mobile: freezed == mobile
+          ? _value.mobile
+          : mobile // ignore: cast_nullable_to_non_nullable
               as String?,
       birthday: freezed == birthday
           ? _value.birthday
@@ -198,8 +198,8 @@ class __$$LoginImplCopyWithImpl<$Res>
 class _$LoginImpl implements Login {
   const _$LoginImpl(
       {required this.id,
-      required this.username,
-      this.phoneNumber,
+      required this.nickName,
+      this.mobile,
       this.birthday,
       this.profile,
       final String? $type})
@@ -211,9 +211,9 @@ class _$LoginImpl implements Login {
   @override
   final int id;
   @override
-  final String username;
+  final String nickName;
   @override
-  final String? phoneNumber;
+  final String? mobile;
   @override
   final DateTime? birthday;
   @override
@@ -224,19 +224,18 @@ class _$LoginImpl implements Login {
 
   @override
   String toString() {
-    return 'User.login(id: $id, username: $username, phoneNumber: $phoneNumber, birthday: $birthday, profile: $profile)';
+    return 'User.login(id: $id, nickName: $nickName, mobile: $mobile, birthday: $birthday, profile: $profile)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber) &&
+            (identical(other.nickName, nickName) ||
+                other.nickName == nickName) &&
+            (identical(other.mobile, mobile) || other.mobile == mobile) &&
             (identical(other.birthday, birthday) ||
                 other.birthday == birthday) &&
             (identical(other.profile, profile) || other.profile == profile));
@@ -245,7 +244,7 @@ class _$LoginImpl implements Login {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, username, phoneNumber, birthday, profile);
+      Object.hash(runtimeType, id, nickName, mobile, birthday, profile);
 
   @JsonKey(ignore: true)
   @override
@@ -256,7 +255,7 @@ class _$LoginImpl implements Login {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -266,13 +265,13 @@ class _$LoginImpl implements Login {
             int followingCount, BookForestFile? profile)
         list,
   }) {
-    return login(id, username, phoneNumber, birthday, profile);
+    return login(id, nickName, mobile, birthday, profile);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -282,13 +281,13 @@ class _$LoginImpl implements Login {
             int followingCount, BookForestFile? profile)?
         list,
   }) {
-    return login?.call(id, username, phoneNumber, birthday, profile);
+    return login?.call(id, nickName, mobile, birthday, profile);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,
@@ -300,7 +299,7 @@ class _$LoginImpl implements Login {
     required TResult orElse(),
   }) {
     if (login != null) {
-      return login(id, username, phoneNumber, birthday, profile);
+      return login(id, nickName, mobile, birthday, profile);
     }
     return orElse();
   }
@@ -356,16 +355,16 @@ class _$LoginImpl implements Login {
 abstract class Login implements User {
   const factory Login(
       {required final int id,
-      required final String username,
-      final String? phoneNumber,
+      required final String nickName,
+      final String? mobile,
       final DateTime? birthday,
       final BookForestFile? profile}) = _$LoginImpl;
 
   factory Login.fromJson(Map<String, dynamic> json) = _$LoginImpl.fromJson;
 
   int get id;
-  String get username;
-  String? get phoneNumber;
+  String get nickName;
+  String? get mobile;
   DateTime? get birthday;
   BookForestFile? get profile;
   @JsonKey(ignore: true)
@@ -406,7 +405,7 @@ class _$LogoutImpl implements Logout {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LogoutImpl);
   }
@@ -418,7 +417,7 @@ class _$LogoutImpl implements Logout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -434,7 +433,7 @@ class _$LogoutImpl implements Logout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -450,7 +449,7 @@ class _$LogoutImpl implements Logout {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,
@@ -554,7 +553,7 @@ class _$LogginInImpl implements LogginIn {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType && other is _$LogginInImpl);
   }
@@ -566,7 +565,7 @@ class _$LogginInImpl implements LogginIn {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -582,7 +581,7 @@ class _$LogginInImpl implements LogginIn {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -598,7 +597,7 @@ class _$LogginInImpl implements LogginIn {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,
@@ -730,7 +729,7 @@ class _$SimpleWriterImpl implements SimpleWriter {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SimpleWriterImpl &&
@@ -752,7 +751,7 @@ class _$SimpleWriterImpl implements SimpleWriter {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -768,7 +767,7 @@ class _$SimpleWriterImpl implements SimpleWriter {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -784,7 +783,7 @@ class _$SimpleWriterImpl implements SimpleWriter {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,
@@ -969,7 +968,7 @@ class _$UserListImpl implements UserList {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserListImpl &&
@@ -997,7 +996,7 @@ class _$UserListImpl implements UserList {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id, String username, String? phoneNumber,
+    required TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)
         login,
     required TResult Function() logout,
@@ -1013,7 +1012,7 @@ class _$UserListImpl implements UserList {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id, String username, String? phoneNumber,
+    TResult? Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult? Function()? logout,
@@ -1029,7 +1028,7 @@ class _$UserListImpl implements UserList {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id, String username, String? phoneNumber,
+    TResult Function(int id, String nickName, String? mobile,
             DateTime? birthday, BookForestFile? profile)?
         login,
     TResult Function()? logout,

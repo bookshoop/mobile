@@ -19,16 +19,13 @@ class _AuthRepository implements AuthRepository {
   String? baseUrl;
 
   @override
-  Future<Jwt> socialLogin({
-    required String snsName,
-    required SignInData signInData,
-  }) async {
+  Future<LoginResponse> socialLogin({required SignInData signInData}) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'snsName': snsName};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = signInData;
-    final _result =
-        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Jwt>(Options(
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -44,7 +41,7 @@ class _AuthRepository implements AuthRepository {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = Jwt.fromJson(_result.data!);
+    final value = LoginResponse.fromJson(_result.data!);
     return value;
   }
 
@@ -83,11 +80,11 @@ class _AuthRepository implements AuthRepository {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authRepositoryHash() => r'6b698bfc7a9eeb7947c270e03cc5d00c03b342bc';
+String _$authRepositoryHash() => r'158fb7324e7195000fb4866be1a2c6f764e36a6d';
 
 /// See also [authRepository].
 @ProviderFor(authRepository)
-final authRepositoryProvider = AutoDisposeProvider<AuthRepository>.internal(
+final authRepositoryProvider = Provider<AuthRepository>.internal(
   authRepository,
   name: r'authRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -97,6 +94,6 @@ final authRepositoryProvider = AutoDisposeProvider<AuthRepository>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef AuthRepositoryRef = AutoDisposeProviderRef<AuthRepository>;
+typedef AuthRepositoryRef = ProviderRef<AuthRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

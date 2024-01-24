@@ -1,8 +1,8 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_appbar.dart';
-import 'package:bookforest/common/presentation/widgets/layout/custom_scaffold.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
+import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:flutter/material.dart';
 
 class PushScreen extends StatelessWidget {
@@ -25,10 +25,10 @@ class PushScreen extends StatelessWidget {
               key: Key(index.toString()),
               child: Container(
                 padding: EdgeInsets.only(
-                  top: expectSize(10),
-                  left: expectSize(15),
-                  right: expectSize(15),
-                  bottom: expectSize(6),
+                  top: 10.size,
+                  left: 15.size,
+                  right: 15.size,
+                  bottom: 6.size,
                 ),
                 decoration: const BoxDecoration(
                   border: Border(
@@ -40,8 +40,8 @@ class PushScreen extends StatelessWidget {
                   children: [
                     Image.asset(
                       'assets/images/icon/bookforest.png',
-                      width: expectSize(20),
-                      height: expectSize(20),
+                      width: 20.size,
+                      height: 20.size,
                       color: AppThemeData.mainColor,
                     ),
                     const EmptySpace(width: 10),

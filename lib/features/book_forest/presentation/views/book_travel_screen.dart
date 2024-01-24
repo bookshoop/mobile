@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/presentation/views/book_forest_search_screen.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/book_forest_preview.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/book_forest_map.dart';
@@ -15,8 +15,8 @@ class BookTravelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        left: expectSize(24),
-        right: expectSize(24),
+        left: 24.size,
+        right: 24.size,
       ),
       child: SingleChildScrollView(
         child: Column(
@@ -31,8 +31,8 @@ class BookTravelScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    top: expectSize(18),
-                    bottom: expectSize(19),
+                    top: 18.size,
+                    bottom: 19.size,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

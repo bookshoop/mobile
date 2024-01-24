@@ -1,7 +1,7 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/domain/entities/pagination.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_tree/domain/entities/book_tree.dart';
 import 'package:bookforest/features/book_tree/presentation/widgets/book_tree_list_card.dart';
 import 'package:bookforest/features/book_tree/presentation/widgets/book_tree_preview_shimmer.dart';
@@ -25,8 +25,8 @@ class BookTreePreview extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            top: expectSize(18),
-            bottom: expectSize(19),
+            top: 18.size,
+            bottom: 19.size,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

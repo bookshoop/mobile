@@ -1,6 +1,6 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,7 @@ class _DropdownSelectorState extends State<DropdownSelector> {
               color: Colors.black,
             ),
             customButton: SizedBox(
-              width: expectSize(150),
+              width: 150.size,
               child: Row(
                 children: [
                   Flexible(
@@ -61,7 +61,7 @@ class _DropdownSelectorState extends State<DropdownSelector> {
                     turns: isOpen ? 0.5 : 0,
                     child: Icon(
                       Icons.keyboard_arrow_down,
-                      size: expectSize(24),
+                      size: 24.size,
                     ),
                   ),
                 ],
@@ -70,7 +70,7 @@ class _DropdownSelectorState extends State<DropdownSelector> {
             items: widget.dropdownItems.map((String item) {
               return DropdownItem<String>(
                 value: item,
-                height: expectSize(40),
+                height: 40.size,
                 child: Text(
                   item,
                   style: AppThemeData.medium_15,
@@ -90,7 +90,7 @@ class _DropdownSelectorState extends State<DropdownSelector> {
             dropdownStyleData: DropdownStyleData(
               elevation: 0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(expectSize(8)),
+                borderRadius: BorderRadius.circular(8.size),
                 border: Border.all(
                   color: const Color.fromRGBO(175, 177, 182, 1),
                 ),
@@ -104,8 +104,8 @@ class _DropdownSelectorState extends State<DropdownSelector> {
             ),
             menuItemStyleData: MenuItemStyleData(
               padding: EdgeInsets.only(
-                left: expectSize(16),
-                right: expectSize(16),
+                left: 16.size,
+                right: 16.size,
               ),
             ),
           ),
@@ -124,7 +124,7 @@ class _DropdownSelectorState extends State<DropdownSelector> {
         //       ),
         //       Icon(
         //         Icons.keyboard_arrow_right,
-        //         size: expectSize(24),
+        //         size: 24.size,
         //       ),
         //     ],
         //   ),

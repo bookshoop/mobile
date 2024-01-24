@@ -1,4 +1,4 @@
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/auth/domain/entities/enums/login_type.dart';
 import 'package:bookforest/features/auth/presentation/providers/auth_controller.dart';
 import 'package:flutter/material.dart';
@@ -22,12 +22,12 @@ class LoginButton extends ConsumerWidget {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(
-              expectSize(55),
+              55.size,
             ),
             child: Image.asset(
               'assets/images/login/kakao.png',
-              width: expectSize(55),
-              height: expectSize(55),
+              width: 55.size,
+              height: 55.size,
             ),
           ),
         ),
@@ -39,12 +39,12 @@ class LoginButton extends ConsumerWidget {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(
-              expectSize(55),
+              55.size,
             ),
             child: Image.asset(
               'assets/images/login/naver_login_button.png',
-              width: expectSize(55),
-              height: expectSize(55),
+              width: 55.size,
+              height: 55.size,
             ),
           ),
         ),
@@ -56,12 +56,12 @@ class LoginButton extends ConsumerWidget {
           },
           child: ClipRRect(
             borderRadius: BorderRadius.circular(
-              expectSize(55),
+              55.size,
             ),
             child: Image.asset(
-              'assets/images/login/apple_login.png',
-              width: expectSize(55),
-              height: expectSize(55),
+              'assets/images/login/apple_logo.png',
+              width: 55.size,
+              height: 55.size,
             ),
           ),
         ),

@@ -1,7 +1,7 @@
-import 'package:bookforest/common/configs/theme/theme.dart';
-import 'package:bookforest/common/domain/entities/pagination.dart';
-import 'package:bookforest/common/presentation/widgets/empty_space.dart';
-import 'package:bookforest/common/utils/size_util.dart';
+import 'package:bookforest/core/configs/theme/theme.dart';
+import 'package:bookforest/core/domain/entities/pagination.dart';
+import 'package:bookforest/core/presentation/widgets/empty_space.dart';
+import 'package:bookforest/core/utils/size_util.dart';
 import 'package:bookforest/features/book_forest/domain/entities/book_forest.dart';
 import 'package:bookforest/features/book_forest/presentation/widgets/book_forest_list_card.dart';
 import 'package:flutter/material.dart';
@@ -24,14 +24,14 @@ class BookForestPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-        top: expectSize(5),
-        bottom: expectSize(15),
+        top: 5.size,
+        bottom: 15.size,
       ),
       child: Column(
         children: [
           Padding(
             padding: EdgeInsets.only(
-              bottom: expectSize(19),
+              bottom: 19.size,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
