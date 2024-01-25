@@ -2,6 +2,7 @@ import 'package:bookforest/core/configs/routes/router_notifier.dart';
 import 'package:bookforest/features/auth/presentation/providers/auth_controller.dart';
 import 'package:bookforest/features/auth/presentation/views/login_screen.dart';
 import 'package:bookforest/features/auth/presentation/views/splash_screen.dart';
+import 'package:bookforest/features/book/presentation/views/book_detail_screen.dart';
 import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
 import 'package:bookforest/features/user/domain/entities/user.dart';
 import 'package:bookforest/features/user/presentation/views/my_page_screen.dart';
@@ -61,6 +62,13 @@ final goRouter = Provider<GoRouter>(
           path: '/mypage',
           name: MyPageScreen.routeName,
           builder: (context, state) => const MyPageScreen(),
+        ),
+        GoRoute(
+          path: '/book/:id',
+          name: BookDetailScreen.routeName,
+          builder: (context, state) => BookDetailScreen(
+            id: state.path!,
+          ),
         ),
       ],
       navigatorKey: navigatorKey,

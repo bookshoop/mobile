@@ -133,4 +133,8 @@ class AppThemeData {
     fontSize: 20.size,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle bold_24 = TextStyle(
+    fontSize: 24.size,
+    fontWeight: FontWeight.w700,
+  );
 }
