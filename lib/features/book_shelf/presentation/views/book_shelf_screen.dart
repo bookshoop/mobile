@@ -47,28 +47,154 @@ class BookShelfScreen extends StatelessWidget {
                             hintText: '내 서재의 책을 검색해보세요!',
                           ),
                           const EmptySpace(height: 14),
-                          DropdownSelector(
-                            dropdownItems: const [
-                              '전체',
-                              '냥냥이 서재',
-                              '집사 서재',
-                              '집사서재는 고양이꺼',
-                              '집사 고양이 귀엽찌!',
+                          Row(
+                            children: [
+                              // const Icon(
+                              //   Icons.tune_outlined,
+                              //   color: AppThemeData.mainColor,
+                              // ),
+                              // EmptySpace(width: 3.size),
+                              Expanded(
+                                child: SizedBox(
+                                  height: 20.size,
+                                  child: ListView.separated(
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        color: Colors.accents[15 % (index + 1)],
+                                        width: 50.size,
+                                        height: 10.size,
+                                      );
+                                    },
+                                    separatorBuilder: (context, index) {
+                                      return SizedBox(
+                                        width: 10.size,
+                                      );
+                                    },
+                                    itemCount: 5,
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  showModalBottomSheet(
+                                    context: context,
+                                    elevation: 0,
+                                    backgroundColor: Colors.white,
+                                    isScrollControlled: true,
+                                    scrollControlDisabledMaxHeightRatio: 0.5,
+                                    useSafeArea: true,
+                                    builder: (_) => Padding(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 30.size,
+                                        horizontal: 20.size,
+                                      ),
+                                      child: Wrap(
+                                        children: [
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                onTap: () {},
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      '서재관리',
+                                                      style: AppThemeData
+                                                          .medium_18,
+                                                    ),
+                                                    Icon(
+                                                      Icons
+                                                          .keyboard_arrow_right,
+                                                      size: 26.size,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              EmptySpace(
+                                                height: 15.size,
+                                              ),
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                onTap: () {},
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceBetween,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.end,
+                                                  children: [
+                                                    Text(
+                                                      '도서관리',
+                                                      style: AppThemeData
+                                                          .medium_18,
+                                                    ),
+                                                    Icon(
+                                                      Icons
+                                                          .keyboard_arrow_right,
+                                                      size: 26.size,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              EmptySpace(
+                                                height: 15.size,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.only(left: 2.size),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        '서재관리',
+                                        style: AppThemeData.medium_15,
+                                      ),
+                                      Icon(
+                                        Icons.keyboard_arrow_right,
+                                        size: 24.size,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ],
-                            hintText: '위치선택',
-                            endButton: Row(
-                              children: [
-                                Text(
-                                  '서재관리\u{1F4DA}',
-                                  style: AppThemeData.medium_15,
-                                ),
-                                Icon(
-                                  Icons.keyboard_arrow_right,
-                                  size: 24.size,
-                                ),
-                              ],
-                            ),
                           ),
+                          // DropdownSelector(
+                          //   dropdownItems: const [
+                          //     '전체',
+                          //     '냥냥이 서재',
+                          //     '집사 서재',
+                          //     '집사서재는 고양이꺼',
+                          //     '집사 고양이 귀엽찌!',
+                          //   ],
+                          //   hintText: '위치선택',
+                          //   endButton: Row(
+                          //     children: [
+                          //       Text(
+                          //         '서재관리\u{1F4DA}',
+                          //         style: AppThemeData.medium_15,
+                          //       ),
+                          //       Icon(
+                          //         Icons.keyboard_arrow_right,
+                          //         size: 24.size,
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                           const EmptySpace(height: 16),
                         ],
                       ),

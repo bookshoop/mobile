@@ -12,20 +12,17 @@ class CustomInterceptor extends Interceptor {
   final timeFormat = DateFormat('HH:mm:ss.SS');
   final Ref ref;
   String sessionId = '';
-  BuildContext? context;
   final logger = Logger(
     printer: SimplePrinter(colors: false),
   );
 
   CustomInterceptor({
     required this.ref,
-    this.context,
   });
 
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    context = navigatorKey.currentContext!;
     logger.d(
         "[REQ] [${options.method}] [${timeFormat.format(DateTime.now())}] ${options.uri}");
     if (options.data.runtimeType == FormData) {
