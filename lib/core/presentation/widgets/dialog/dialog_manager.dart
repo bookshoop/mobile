@@ -1,10 +1,8 @@
 import 'package:bookforest/core/presentation/widgets/custom_button.dart';
 import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/utils/size_util.dart';
-import 'package:bookforest/core/configs/routes/gorouter_provider.dart';
 import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:go_router/go_router.dart';
 
 class DialogManager {

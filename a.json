@@ -1,22 +1,30 @@
-{
-  "id": "id, int",
-  "title": "책제목, string",
-  "link": "알라딘 링크(프리미엄 api를 신청하려면 필요해), string, nullable",
-  "writer": "저자, string",
-  "pubDate": "출시일, date(2011-02-15), nullable",
-  "description": "책 소개, string, nullable",
-  "isbn": "isbn, string, nullable",
-  "price": "가격, int, nullable",
-  "thumbnail": "책 표지 사진경로, string, nullable",
-  "publisher": "출판사, string, nullable",
-  "toc": "목차, string, nullable",
-  "category": "카테고리, string, nullable",
-  "creater": "등록한 사람 id, int, nullable",
-  "isReaded": "읽은책 여부, bool",
-  "readCount": "읽은 사람 수, int",
-  "rating": "별점, double, nullable",
-  "bookShelf": [
-    { "id": "서재(책장,책칸) id, int", "name": "이름, string" },
-    { "id": "서재(책장,책칸) id, int", "name": "이름, string" }
-  ]
-}
+[
+  {
+    "id": "서재 id, int",
+    "name": "서재 이름, string",
+    "children": [
+      {
+        "id": "서재 id, int",
+        "name": "서재 이름, string",
+        "children": [
+          {
+            "id": "서재 id, int",
+            "name": "서재 이름, string",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "서재 id, int",
+    "name": "서재 이름, string",
+    "children": [
+      {
+        "id": "서재 id, int",
+        "name": "서재 이름, string",
+        "children": []
+      }
+    ]
+  }
+]

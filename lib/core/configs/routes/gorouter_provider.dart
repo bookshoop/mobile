@@ -3,7 +3,8 @@ import 'package:bookforest/features/auth/presentation/providers/auth_controller.
 import 'package:bookforest/features/auth/presentation/views/login_screen.dart';
 import 'package:bookforest/features/auth/presentation/views/splash_screen.dart';
 import 'package:bookforest/features/book/presentation/views/book_detail_screen.dart';
-import 'package:bookforest/features/book_shelf/presentation/views/book_shelf_screen.dart';
+import 'package:bookforest/features/library/presentation/views/library_manage_screen.dart';
+import 'package:bookforest/features/library/presentation/views/library_screen.dart';
 import 'package:bookforest/features/user/domain/entities/user.dart';
 import 'package:bookforest/features/user/presentation/views/my_page_screen.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -54,10 +55,16 @@ final goRouter = Provider<GoRouter>(
           builder: (context, state) => const LoginScreen(),
         ),
         GoRoute(
-          path: '/book-shelf',
-          name: BookShelfScreen.routeName,
-          builder: (context, state) => const BookShelfScreen(),
-        ),
+            path: '/library',
+            name: LibraryScreen.routeName,
+            builder: (context, state) => const LibraryScreen(),
+            routes: [
+              GoRoute(
+                path: 'manage',
+                name: LibraryManageScreen.routeName,
+                builder: (context, state) => const LibraryManageScreen(),
+              ),
+            ]),
         GoRoute(
           path: '/mypage',
           name: MyPageScreen.routeName,
@@ -80,7 +87,7 @@ final goRouter = Provider<GoRouter>(
             state.matchedLocation == LoginScreen.routeName;
 
         if (logingIn && user is Login) {
-          return '/book-shelf';
+          return LibraryScreen.routeName;
         }
 
         if (user is Logout) {

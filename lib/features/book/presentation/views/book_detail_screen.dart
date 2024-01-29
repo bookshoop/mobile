@@ -1,5 +1,4 @@
 import 'package:bookforest/core/configs/theme/theme.dart';
-import 'package:bookforest/core/presentation/widgets/custom_button.dart';
 import 'package:bookforest/core/presentation/widgets/dialog/dialog_manager.dart';
 import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
@@ -9,7 +8,6 @@ import 'package:bookforest/features/book/domain/entities/book.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BookDetailScreen extends StatelessWidget {

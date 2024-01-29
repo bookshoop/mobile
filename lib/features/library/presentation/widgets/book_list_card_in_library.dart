@@ -5,8 +5,8 @@ import 'package:bookforest/features/book/presentation/views/book_detail_screen.d
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BookListCardInBookShelf extends StatelessWidget {
-  const BookListCardInBookShelf({
+class BookListCardInLibrary extends StatelessWidget {
+  const BookListCardInLibrary({
     super.key,
   });
 
