@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/utils/size_util.dart';
@@ -14,7 +16,7 @@ class LibraryTab extends StatefulWidget {
 
 class _LibraryTabState extends State<LibraryTab>
     with SingleTickerProviderStateMixin {
-  late final tabController;
+  late final TabController tabController;
 
   @override
   void initState() {
@@ -75,6 +77,7 @@ class _LibraryTabState extends State<LibraryTab>
                       Text(
                         '책장11',
                         style: AppThemeData.medium_18,
+                        textAlign: TextAlign.center,
                       ),
                       EmptySpace(height: 10.size),
                       Wrap(
@@ -182,12 +185,18 @@ class _LibraryTabState extends State<LibraryTab>
                                       children: List.generate(
                                         7,
                                         (index) => Container(
-                                          width: 10.size,
+                                          width: 12.size,
                                           height:
                                               (SizeUtil.deviceWidth - 80.size) /
-                                                  (4 - index / 5),
-                                          color:
-                                              Colors.accents[15 % (index + 2)],
+                                                      3 -
+                                                  (Random().nextInt(30)),
+                                          decoration: BoxDecoration(
+                                            color: Colors.primaries[17 %
+                                                (Random().nextInt(17) + 1)],
+                                            borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(3.size),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -200,6 +209,7 @@ class _LibraryTabState extends State<LibraryTab>
                       Text(
                         '책장22',
                         style: AppThemeData.medium_18,
+                        textAlign: TextAlign.center,
                       ),
                       EmptySpace(height: 10.size),
                       Wrap(
@@ -307,12 +317,18 @@ class _LibraryTabState extends State<LibraryTab>
                                       children: List.generate(
                                         7,
                                         (index) => Container(
-                                          width: 10.size,
+                                          width: 12.size,
                                           height:
                                               (SizeUtil.deviceWidth - 80.size) /
-                                                  (4 - index / 5),
-                                          color:
-                                              Colors.accents[15 % (index + 2)],
+                                                      3 -
+                                                  (Random().nextInt(30)),
+                                          decoration: BoxDecoration(
+                                            color: Colors.primaries[17 %
+                                                (Random().nextInt(17) + 1)],
+                                            borderRadius: BorderRadius.vertical(
+                                              top: Radius.circular(3.size),
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -321,6 +337,17 @@ class _LibraryTabState extends State<LibraryTab>
                               );
                             },
                           ).toList()),
+                      EmptySpace(height: 20.size),
+                      // Text(
+                      //   '책장 추가',
+                      //   style: AppThemeData.medium_18,
+                      //   textAlign: TextAlign.center,
+                      // ),
+                      Icon(
+                        Icons.add,
+                        size: 50.size,
+                        color: AppThemeData.darkGrey,
+                      ),
                     ],
                   ),
                 ),

@@ -47,3 +47,4 @@ app.*.map.json
 .env
 /ios/firebase/
 /android/app/google-services.json
+a.json

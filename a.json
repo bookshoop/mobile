@@ -1,30 +1,14 @@
 [
   {
-    "id": "서재 id, int",
-    "name": "서재 이름, string",
-    "children": [
-      {
-        "id": "서재 id, int",
-        "name": "서재 이름, string",
-        "children": [
-          {
-            "id": "서재 id, int",
-            "name": "서재 이름, string",
-            "children": []
-          }
-        ]
-      }
-    ]
+    "categoryId": "카테고리 id, int",
+    "name": "이름, string"
   },
   {
-    "id": "서재 id, int",
-    "name": "서재 이름, string",
-    "children": [
-      {
-        "id": "서재 id, int",
-        "name": "서재 이름, string",
-        "children": []
-      }
-    ]
+    "categoryId": "카테고리 id, int",
+    "name": "이름, string"
+  },
+  {
+    "categoryId": "카테고리 id, int",
+    "name": "이름, string"
   }
 ]

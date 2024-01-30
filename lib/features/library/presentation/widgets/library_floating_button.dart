@@ -4,8 +4,8 @@ import 'package:bookforest/features/library/presentation/widgets/floating_button
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
-class BookShelfFloatingButton extends StatelessWidget {
-  const BookShelfFloatingButton({
+class LibraryFloatingButton extends StatelessWidget {
+  const LibraryFloatingButton({
     super.key,
   });
 

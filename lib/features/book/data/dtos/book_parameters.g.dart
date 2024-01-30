@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../../book/data/dtos/book_parameters.dart';
+part of 'book_parameters.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
