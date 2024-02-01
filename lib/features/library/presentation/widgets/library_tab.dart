@@ -26,7 +26,7 @@ class _LibraryTabState extends State<LibraryTab>
 
   @override
   Widget build(BuildContext context) {
-    final color = Color(0xFFD2B48C);
+    const color = Color(0xFFD2B48C);
     return Column(
       children: [
         Padding(
@@ -116,7 +116,7 @@ class _LibraryTabState extends State<LibraryTab>
                                             : 3.size,
                                       ),
                                     ),
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                       stops: [0.75, 1],
                                       colors: [
                                         Colors.white,
@@ -160,7 +160,7 @@ class _LibraryTabState extends State<LibraryTab>
                                           : 3.size,
                                     ),
                                   ),
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     stops: [0.75, 1],
                                     colors: [
                                       Colors.white,
@@ -248,7 +248,7 @@ class _LibraryTabState extends State<LibraryTab>
                                             : 3.size,
                                       ),
                                     ),
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                       stops: [0.75, 1],
                                       colors: [
                                         Colors.white,
@@ -292,7 +292,7 @@ class _LibraryTabState extends State<LibraryTab>
                                           : 3.size,
                                     ),
                                   ),
-                                  gradient: LinearGradient(
+                                  gradient: const LinearGradient(
                                     stops: [0.75, 1],
                                     colors: [
                                       Colors.white,
@@ -352,7 +352,7 @@ class _LibraryTabState extends State<LibraryTab>
                   ),
                 ),
               ),
-              Text('추가서재'),
+              const Text('추가서재'),
             ],
           ),
         ),

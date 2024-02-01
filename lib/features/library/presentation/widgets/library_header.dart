@@ -4,15 +4,18 @@ import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/presentation/widgets/search_textfield.dart';
 import 'package:bookforest/core/presentation/widgets/sliver_header_delegate.dart';
 import 'package:bookforest/core/utils/size_util.dart';
+import 'package:bookforest/features/library/presentation/providers/library_controller.dart';
 import 'package:bookforest/features/library/presentation/widgets/filter_bottom_sheet.dart';
 import 'package:bookforest/features/library/presentation/widgets/manage_bottom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LibraryHeader extends StatelessWidget {
+class LibraryHeader extends ConsumerWidget {
   const LibraryHeader({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(libraryControllerProvider);
     return SliverPersistentHeader(
       floating: true,
       delegate: SliverHeaderDelegate(
@@ -48,7 +51,7 @@ class LibraryHeader extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text(
-                                    '위치선택',
+                                    state.selectedLibrary,
                                     style: AppThemeData.regular_15,
                                   ),
                                   Icon(
@@ -72,7 +75,7 @@ class LibraryHeader extends StatelessWidget {
                               child: Row(
                                 children: [
                                   Text(
-                                    '장르선택',
+                                    state.selectedCategory,
                                     style: AppThemeData.regular_15,
                                   ),
                                   Icon(
@@ -89,7 +92,10 @@ class LibraryHeader extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      onManageTap(context);
+                      customBottomSheet(
+                        context,
+                        child: const ManageBottomSheet(),
+                      );
                     },
                     child: Padding(
                       padding: EdgeInsets.only(left: 2.size),
@@ -115,13 +121,6 @@ class LibraryHeader extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  void onManageTap(BuildContext context) {
-    customBottomSheet(
-      context,
-      child: const ManageBottomSheet(),
     );
   }
 }
