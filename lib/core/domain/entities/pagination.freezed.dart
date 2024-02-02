@@ -148,7 +148,9 @@ class _$PaginationDataImpl<T> implements PaginationData<T> {
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =>
       _$$PaginationDataImplFromJson(json, fromJsonT);
 
+// TODO content에 cursor 적용
   final List<T> _content;
+// TODO content에 cursor 적용
   @override
   List<T> get content {
     if (_content is EqualUnmodifiableListView) return _content;
@@ -271,6 +273,7 @@ abstract class PaginationData<T> implements Pagination<T> {
           Map<String, dynamic> json, T Function(Object?) fromJsonT) =
       _$PaginationDataImpl<T>.fromJson;
 
+// TODO content에 cursor 적용
   List<T> get content;
   bool get hasMore;
   @JsonKey(ignore: true)

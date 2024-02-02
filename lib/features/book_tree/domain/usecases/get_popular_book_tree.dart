@@ -10,7 +10,6 @@ part 'get_popular_book_tree.g.dart';
 
 @riverpod
 GetPopularBookTree getPopularBookTree(GetPopularBookTreeRef ref) {
-  // TODO 실제 API 연결
   return GetPopularBookTree(bookTreeRepository: MockBookTreeRepository());
 }
 

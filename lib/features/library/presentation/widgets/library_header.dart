@@ -15,7 +15,6 @@ class LibraryHeader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(libraryControllerProvider);
     return SliverPersistentHeader(
       floating: true,
       delegate: SliverHeaderDelegate(
@@ -31,90 +30,95 @@ class LibraryHeader extends ConsumerWidget {
                 hintText: '내 서재의 책을 검색해보세요!',
               ),
               const EmptySpace(height: 14),
-              Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 20.size,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                customBottomSheet(
-                                  context,
-                                  child: const FilterBottomSheet(),
-                                );
-                              },
-                              splashColor: Colors.transparent,
-                              child: Row(
-                                children: [
-                                  Text(
-                                    state.selectedLibrary,
-                                    style: AppThemeData.regular_15,
+              Consumer(
+                builder: (context, ref, _) {
+                  final state = ref.watch(libraryControllerProvider);
+                  return Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 20.size,
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    customBottomSheet(
+                                      context,
+                                      child: const FilterBottomSheet(),
+                                    );
+                                  },
+                                  splashColor: Colors.transparent,
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        state.selectedLibrary,
+                                        style: AppThemeData.regular_15,
+                                      ),
+                                      Icon(
+                                        Icons.keyboard_arrow_down,
+                                        size: 22.size,
+                                      ),
+                                    ],
                                   ),
-                                  Icon(
-                                    Icons.keyboard_arrow_down,
-                                    size: 22.size,
+                                ),
+                                EmptySpace(
+                                  width: 10.size,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    customBottomSheet(
+                                      context,
+                                      child: const FilterBottomSheet(),
+                                    );
+                                  },
+                                  splashColor: Colors.transparent,
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        state.selectedCategory,
+                                        style: AppThemeData.regular_15,
+                                      ),
+                                      Icon(
+                                        Icons.keyboard_arrow_down,
+                                        size: 22.size,
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            EmptySpace(
-                              width: 10.size,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                customBottomSheet(
-                                  context,
-                                  child: const FilterBottomSheet(),
-                                );
-                              },
-                              splashColor: Colors.transparent,
-                              child: Row(
-                                children: [
-                                  Text(
-                                    state.selectedCategory,
-                                    style: AppThemeData.regular_15,
-                                  ),
-                                  Icon(
-                                    Icons.keyboard_arrow_down,
-                                    size: 22.size,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      customBottomSheet(
-                        context,
-                        child: const ManageBottomSheet(),
-                      );
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 2.size),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            '서재관리',
-                            style: AppThemeData.medium_15,
+                      InkWell(
+                        onTap: () {
+                          customBottomSheet(
+                            context,
+                            child: const ManageBottomSheet(),
+                          );
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 2.size),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Text(
+                                '서재관리',
+                                style: AppThemeData.medium_15,
+                              ),
+                              Icon(
+                                Icons.keyboard_arrow_right,
+                                size: 24.size,
+                              ),
+                            ],
                           ),
-                          Icon(
-                            Icons.keyboard_arrow_right,
-                            size: 24.size,
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                ],
+                    ],
+                  );
+                },
               ),
               const EmptySpace(height: 16),
             ],

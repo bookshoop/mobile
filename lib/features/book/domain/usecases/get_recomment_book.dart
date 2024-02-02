@@ -10,7 +10,6 @@ part 'get_recomment_book.g.dart';
 
 @riverpod
 GetRecommendBook getRecommendBook(GetRecommendBookRef ref) {
-  // TODO 실제 API 연결
   return GetRecommendBook(bookRepository: MockBookRepository());
 }
 

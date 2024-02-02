@@ -76,8 +76,8 @@ class BookForest extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
-        Locale('en', ''),
         Locale('ko', ''),
+        Locale('en', ''),
       ],
       title: 'Book Forest',
       theme: AppThemeData.theme,

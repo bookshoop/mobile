@@ -10,7 +10,6 @@ part 'get_popular_book_forest.g.dart';
 
 @riverpod
 GetPopularBookForest getPopularBookForest(GetPopularBookForestRef ref) {
-  // TODO 실제 API 연결
   return GetPopularBookForest(bookForestRepository: MockBookForestRepository());
 }
 

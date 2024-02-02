@@ -19,7 +19,10 @@ mixin _$LibraryState {
   String get searchValue => throw _privateConstructorUsedError;
   List<Library> get library => throw _privateConstructorUsedError;
   List<BookCategory> get category => throw _privateConstructorUsedError;
-  Pagination<SimpleBook> get libraryBooks => throw _privateConstructorUsedError;
+  List<Library> get allLibrary => throw _privateConstructorUsedError;
+  List<BookCategory> get allCategory => throw _privateConstructorUsedError;
+  Pagination<LibraryBook> get libraryBooks =>
+      throw _privateConstructorUsedError;
   bool get manageMode => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,10 +40,12 @@ abstract class $LibraryStateCopyWith<$Res> {
       {String searchValue,
       List<Library> library,
       List<BookCategory> category,
-      Pagination<SimpleBook> libraryBooks,
+      List<Library> allLibrary,
+      List<BookCategory> allCategory,
+      Pagination<LibraryBook> libraryBooks,
       bool manageMode});
 
-  $PaginationCopyWith<SimpleBook, $Res> get libraryBooks;
+  $PaginationCopyWith<LibraryBook, $Res> get libraryBooks;
 }
 
 /// @nodoc
@@ -59,6 +64,8 @@ class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
     Object? searchValue = null,
     Object? library = null,
     Object? category = null,
+    Object? allLibrary = null,
+    Object? allCategory = null,
     Object? libraryBooks = null,
     Object? manageMode = null,
   }) {
@@ -75,10 +82,18 @@ class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as List<BookCategory>,
+      allLibrary: null == allLibrary
+          ? _value.allLibrary
+          : allLibrary // ignore: cast_nullable_to_non_nullable
+              as List<Library>,
+      allCategory: null == allCategory
+          ? _value.allCategory
+          : allCategory // ignore: cast_nullable_to_non_nullable
+              as List<BookCategory>,
       libraryBooks: null == libraryBooks
           ? _value.libraryBooks
           : libraryBooks // ignore: cast_nullable_to_non_nullable
-              as Pagination<SimpleBook>,
+              as Pagination<LibraryBook>,
       manageMode: null == manageMode
           ? _value.manageMode
           : manageMode // ignore: cast_nullable_to_non_nullable
@@ -88,8 +103,8 @@ class _$LibraryStateCopyWithImpl<$Res, $Val extends LibraryState>
 
   @override
   @pragma('vm:prefer-inline')
-  $PaginationCopyWith<SimpleBook, $Res> get libraryBooks {
-    return $PaginationCopyWith<SimpleBook, $Res>(_value.libraryBooks, (value) {
+  $PaginationCopyWith<LibraryBook, $Res> get libraryBooks {
+    return $PaginationCopyWith<LibraryBook, $Res>(_value.libraryBooks, (value) {
       return _then(_value.copyWith(libraryBooks: value) as $Val);
     });
   }
@@ -107,11 +122,13 @@ abstract class _$$LibraryStateImplCopyWith<$Res>
       {String searchValue,
       List<Library> library,
       List<BookCategory> category,
-      Pagination<SimpleBook> libraryBooks,
+      List<Library> allLibrary,
+      List<BookCategory> allCategory,
+      Pagination<LibraryBook> libraryBooks,
       bool manageMode});
 
   @override
-  $PaginationCopyWith<SimpleBook, $Res> get libraryBooks;
+  $PaginationCopyWith<LibraryBook, $Res> get libraryBooks;
 }
 
 /// @nodoc
@@ -128,6 +145,8 @@ class __$$LibraryStateImplCopyWithImpl<$Res>
     Object? searchValue = null,
     Object? library = null,
     Object? category = null,
+    Object? allLibrary = null,
+    Object? allCategory = null,
     Object? libraryBooks = null,
     Object? manageMode = null,
   }) {
@@ -144,10 +163,18 @@ class __$$LibraryStateImplCopyWithImpl<$Res>
           ? _value._category
           : category // ignore: cast_nullable_to_non_nullable
               as List<BookCategory>,
+      allLibrary: null == allLibrary
+          ? _value._allLibrary
+          : allLibrary // ignore: cast_nullable_to_non_nullable
+              as List<Library>,
+      allCategory: null == allCategory
+          ? _value._allCategory
+          : allCategory // ignore: cast_nullable_to_non_nullable
+              as List<BookCategory>,
       libraryBooks: null == libraryBooks
           ? _value.libraryBooks
           : libraryBooks // ignore: cast_nullable_to_non_nullable
-              as Pagination<SimpleBook>,
+              as Pagination<LibraryBook>,
       manageMode: null == manageMode
           ? _value.manageMode
           : manageMode // ignore: cast_nullable_to_non_nullable
@@ -163,10 +190,14 @@ class _$LibraryStateImpl extends _LibraryState {
       {this.searchValue = '',
       final List<Library> library = const [],
       final List<BookCategory> category = const [],
+      final List<Library> allLibrary = const [],
+      final List<BookCategory> allCategory = const [],
       this.libraryBooks = const Pagination.loading(),
       this.manageMode = false})
       : _library = library,
         _category = category,
+        _allLibrary = allLibrary,
+        _allCategory = allCategory,
         super._();
 
   @override
@@ -190,16 +221,34 @@ class _$LibraryStateImpl extends _LibraryState {
     return EqualUnmodifiableListView(_category);
   }
 
+  final List<Library> _allLibrary;
   @override
   @JsonKey()
-  final Pagination<SimpleBook> libraryBooks;
+  List<Library> get allLibrary {
+    if (_allLibrary is EqualUnmodifiableListView) return _allLibrary;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allLibrary);
+  }
+
+  final List<BookCategory> _allCategory;
+  @override
+  @JsonKey()
+  List<BookCategory> get allCategory {
+    if (_allCategory is EqualUnmodifiableListView) return _allCategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allCategory);
+  }
+
+  @override
+  @JsonKey()
+  final Pagination<LibraryBook> libraryBooks;
   @override
   @JsonKey()
   final bool manageMode;
 
   @override
   String toString() {
-    return 'LibraryState(searchValue: $searchValue, library: $library, category: $category, libraryBooks: $libraryBooks, manageMode: $manageMode)';
+    return 'LibraryState(searchValue: $searchValue, library: $library, category: $category, allLibrary: $allLibrary, allCategory: $allCategory, libraryBooks: $libraryBooks, manageMode: $manageMode)';
   }
 
   @override
@@ -211,6 +260,10 @@ class _$LibraryStateImpl extends _LibraryState {
                 other.searchValue == searchValue) &&
             const DeepCollectionEquality().equals(other._library, _library) &&
             const DeepCollectionEquality().equals(other._category, _category) &&
+            const DeepCollectionEquality()
+                .equals(other._allLibrary, _allLibrary) &&
+            const DeepCollectionEquality()
+                .equals(other._allCategory, _allCategory) &&
             (identical(other.libraryBooks, libraryBooks) ||
                 other.libraryBooks == libraryBooks) &&
             (identical(other.manageMode, manageMode) ||
@@ -223,6 +276,8 @@ class _$LibraryStateImpl extends _LibraryState {
       searchValue,
       const DeepCollectionEquality().hash(_library),
       const DeepCollectionEquality().hash(_category),
+      const DeepCollectionEquality().hash(_allLibrary),
+      const DeepCollectionEquality().hash(_allCategory),
       libraryBooks,
       manageMode);
 
@@ -238,7 +293,9 @@ abstract class _LibraryState extends LibraryState {
       {final String searchValue,
       final List<Library> library,
       final List<BookCategory> category,
-      final Pagination<SimpleBook> libraryBooks,
+      final List<Library> allLibrary,
+      final List<BookCategory> allCategory,
+      final Pagination<LibraryBook> libraryBooks,
       final bool manageMode}) = _$LibraryStateImpl;
   const _LibraryState._() : super._();
 
@@ -249,7 +306,11 @@ abstract class _LibraryState extends LibraryState {
   @override
   List<BookCategory> get category;
   @override
-  Pagination<SimpleBook> get libraryBooks;
+  List<Library> get allLibrary;
+  @override
+  List<BookCategory> get allCategory;
+  @override
+  Pagination<LibraryBook> get libraryBooks;
   @override
   bool get manageMode;
   @override

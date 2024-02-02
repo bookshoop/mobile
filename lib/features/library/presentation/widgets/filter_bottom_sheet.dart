@@ -2,16 +2,40 @@ import 'package:bookforest/core/configs/theme/theme.dart';
 import 'package:bookforest/core/presentation/widgets/custom_button.dart';
 import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/utils/size_util.dart';
+import 'package:bookforest/features/book/domain/entities/book_category.dart';
+import 'package:bookforest/features/library/domain/entities/library.dart';
+import 'package:bookforest/features/library/presentation/providers/library_controller.dart';
+import 'package:bookforest/features/library/presentation/widgets/category_selector.dart';
+import 'package:bookforest/features/library/presentation/widgets/library_selector.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class FilterBottomSheet extends StatelessWidget {
+class FilterBottomSheet extends ConsumerStatefulWidget {
   const FilterBottomSheet({
     super.key,
   });
 
   @override
+  ConsumerState<FilterBottomSheet> createState() => _FilterBottomSheetState();
+}
+
+class _FilterBottomSheetState extends ConsumerState<FilterBottomSheet> {
+  List<BookCategory> selectedCategory = [];
+  List<Library> selectedLibrary = [];
+
+  @override
+  void initState() {
+    final state = ref.read(libraryControllerProvider);
+    selectedCategory = [...state.category];
+    selectedLibrary = [...state.library];
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final state = ref.watch(libraryControllerProvider);
+
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: 30.size,
@@ -22,98 +46,32 @@ class FilterBottomSheet extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                '위치 선택',
-                style: AppThemeData.medium_18,
-              ),
-              Container(
-                height: 40.size,
-                padding: EdgeInsets.symmetric(vertical: 5.size),
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      splashColor: Colors.transparent,
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5.size,
-                          horizontal: 10.size,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.size),
-                          border: Border.all(
-                            color: AppThemeData.mainColor,
-                            width: 1.5.size,
-                          ),
-                          color: Colors.white,
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          index.toString(),
-                          style: TextStyle(
-                            fontSize: 15.size,
-                            fontWeight: FontWeight.w500,
-                            height: 1.1,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, index) => SizedBox(
-                    width: 10.size,
-                  ),
-                  itemCount: 5,
-                ),
+              LibrarySelector(
+                allLibrary: state.allLibrary,
+                selectedLibrary: selectedLibrary,
+                onTap: (library) {
+                  if (selectedLibrary.contains(library)) {
+                    selectedLibrary.remove(library);
+                  } else {
+                    selectedLibrary = [...selectedLibrary, library];
+                  }
+                  setState(() {});
+                },
               ),
               EmptySpace(height: 10.size),
-              Text(
-                '장르 선택',
-                style: AppThemeData.medium_18,
+              CategorySelector(
+                allCategory: state.allCategory,
+                selectedCategory: selectedCategory,
+                onTap: (category) {
+                  if (selectedCategory.contains(category)) {
+                    selectedCategory.remove(category);
+                  } else {
+                    selectedCategory = [...selectedCategory, category];
+                  }
+                  setState(() {});
+                },
               ),
-              Container(
-                height: 40.size,
-                padding: EdgeInsets.symmetric(vertical: 5.size),
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      splashColor: Colors.transparent,
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 5.size,
-                          horizontal: 10.size,
-                        ),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.size),
-                          border: Border.all(
-                            color: AppThemeData.mainColor,
-                            width: 1.5.size,
-                          ),
-                          color: Colors.white,
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          index.toString(),
-                          style: TextStyle(
-                            fontSize: 15.size,
-                            fontWeight: FontWeight.w500,
-                            height: 1.1,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                  separatorBuilder: (context, index) => SizedBox(
-                    width: 10.size,
-                  ),
-                  itemCount: 15,
-                ),
-              ),
-              EmptySpace(height: 10.size),
+              EmptySpace(height: 15.size),
               Row(
                 children: [
                   Flexible(
@@ -133,7 +91,12 @@ class FilterBottomSheet extends StatelessWidget {
                     child: CustomButton(
                       text: '적용하기',
                       height: 40.size,
-                      onTap: () {},
+                      onTap: () {
+                        ref
+                            .read(libraryControllerProvider.notifier)
+                            .setFilter(selectedCategory, selectedLibrary);
+                        context.pop();
+                      },
                     ),
                   ),
                 ],

@@ -10,7 +10,6 @@ part 'get_best_seller.g.dart';
 
 @riverpod
 GetBestSeller getBestSeller(GetBestSellerRef ref) {
-  // TODO 실제 API 연결
   return GetBestSeller(bookRepository: MockBookRepository());
 }
 

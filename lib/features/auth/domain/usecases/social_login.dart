@@ -110,6 +110,7 @@ class SocialLogin {
     required String socialId,
     required String socialProvider,
   }) async {
+    // ignore: unused_local_variable
     final signInData = SignInData(
       socialId: socialId,
       socialProvider: socialProvider,

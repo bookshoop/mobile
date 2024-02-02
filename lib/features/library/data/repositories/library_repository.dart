@@ -3,6 +3,7 @@ import 'package:bookforest/core/configs/network/dio_provider.dart';
 import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/library/data/dtos/library_parameters.dart';
 import 'package:bookforest/features/library/domain/entities/library_book.dart';
+import 'package:bookforest/features/library/domain/entities/library_tree.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -24,4 +25,7 @@ abstract class LibraryRepository {
   Future<Pagination<LibraryBook>> getLibraryBook({
     @Queries() LibraryParameters? parameters = const LibraryParameters(),
   });
+
+  @GET('/library')
+  Future<List<LibraryTree>> getLibrary();
 }

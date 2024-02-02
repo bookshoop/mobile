@@ -1,7 +1,7 @@
 import 'package:bookforest/core/domain/entities/pagination.dart';
 import 'package:bookforest/features/book/domain/entities/book_category.dart';
-import 'package:bookforest/features/book/domain/entities/simple_book.dart';
 import 'package:bookforest/features/library/domain/entities/library.dart';
+import 'package:bookforest/features/library/domain/entities/library_book.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'library_state.freezed.dart';
@@ -14,7 +14,9 @@ class LibraryState with _$LibraryState {
     @Default('') String searchValue,
     @Default([]) List<Library> library,
     @Default([]) List<BookCategory> category,
-    @Default(Pagination.loading()) Pagination<SimpleBook> libraryBooks,
+    @Default([]) List<Library> allLibrary,
+    @Default([]) List<BookCategory> allCategory,
+    @Default(Pagination.loading()) Pagination<LibraryBook> libraryBooks,
     @Default(false) bool manageMode,
   }) = _LibraryState;
 
@@ -25,7 +27,7 @@ class LibraryState with _$LibraryState {
     if (library.length == 1) {
       return library.first.name;
     }
-    return '${library.first.name}외 ${library.length - 1}';
+    return '${library.first.name} 외 ${library.length - 1}개';
   }
 
   String get selectedCategory {
@@ -35,6 +37,6 @@ class LibraryState with _$LibraryState {
     if (category.length == 1) {
       return category.first.name;
     }
-    return '${category.first.name}외 ${category.length - 1}';
+    return '${category.first.name} 외 ${category.length - 1}개';
   }
 }

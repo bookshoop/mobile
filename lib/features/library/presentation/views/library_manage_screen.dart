@@ -1,11 +1,7 @@
-import 'package:bookforest/core/configs/theme/theme.dart';
-import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/core/presentation/widgets/layout/custom_appbar.dart';
 import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
 import 'package:bookforest/features/library/presentation/widgets/library_tab.dart';
 import 'package:flutter/material.dart';
-
-import 'package:bookforest/core/utils/size_util.dart';
 
 class LibraryManageScreen extends StatelessWidget {
   static String get routeName => '/library/manage';
@@ -13,7 +9,7 @@ class LibraryManageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScaffold(
+    return const CustomScaffold(
       appbar: CustomAppbar(
         title: '서재관리',
       ),
