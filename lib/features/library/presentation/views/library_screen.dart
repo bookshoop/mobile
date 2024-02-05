@@ -1,12 +1,9 @@
 import 'package:bookforest/core/presentation/widgets/layout/custom_scaffold.dart';
 import 'package:bookforest/core/presentation/widgets/layout/main_appbar.dart';
-import 'package:bookforest/core/utils/no_implicit_scroll_physics.dart';
 import 'package:bookforest/features/library/presentation/widgets/library_book_list.dart';
-import 'package:bookforest/features/library/presentation/widgets/library_header.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bookforest/core/utils/size_util.dart';
-import 'package:bookforest/core/presentation/widgets/empty_space.dart';
 import 'package:bookforest/features/library/presentation/widgets/library_floating_button.dart';
 
 class LibraryScreen extends StatelessWidget {
@@ -26,29 +23,7 @@ class LibraryScreen extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            const CustomScrollView(
-              physics: NoImplicitScrollPhysics(),
-              slivers: [
-                LibraryHeader(),
-                // SliverFillRemaining(
-                //   child: DragSelectGridView(
-                //     gridController: DragSelectGridViewController(),
-                //     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                //       crossAxisCount: 3,
-                //       crossAxisSpacing: 15.size,
-                //       childAspectRatio: 0.35,
-                //     ),
-                //     itemBuilder: (context, index, selected) {
-                //       return BookListCardInLibrary();
-                //     },
-                //   ),
-                // ),
-                LibraryBookList(),
-                SliverToBoxAdapter(
-                  child: EmptySpace(height: 64),
-                ),
-              ],
-            ),
+            const LibraryBookList(),
             Positioned(
               bottom: 25.size,
               right: 0,
